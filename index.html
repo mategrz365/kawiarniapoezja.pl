@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="utf-8">
+    <title>Poezja</title>
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IF=edge,chrome=1">
+    <link href="https://fonts.googleapis.com/css?family=Allura&amp;subset=latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=latin-ext" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/fontello.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/jquery.lazy.min.js"></script>
+</head>
+
+<body>
+<header class="page-header">
+    <div class="menu-container">
+        <section class="header-top">
+            <div class="logo"><a href=""><b>Poezja</b></a></div>
+            <button class="hamburger" type="button">
+                        <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                        </span>
+            </button>
+        </section>
+
+        <nav class="page-nav">
+            <ul class="menu-nav">
+                <li><a href="#about">O Nas</a></li>
+                <li><a href="#coffee">Kawa &amp; Pizza</a></li>
+                <li><a href="#offer">Oferta</a></li>
+                <ul>
+                    <li><a href="#party">Imprezy okolicznościowe</a></li>
+                    <li><a href="#catering">Catering</a></li>
+                </ul>
+                <li><a href="#news">Aktualności</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <article class="content">
+        <picture>
+            <source srcset="img/wesele-sm.jpg" media="(max-width:480px)">
+            <source srcset="img/wesele-md.jpg" media="(max-width:768px)">
+                    <img srcset="img/wesele-xl.jpg" alt="Poezja - kawiarnia i dom przyjęć" class="picture">
+                    <!--IE nie działa-->
+        </picture>
+        <section class="info">
+            <h2>Witamy w Poezji!</h2>
+            <p>W miejscu w którym możesz spędzić czas w miłej atmosferze w naszej kawiarni lub zorganizować każdy rodzaj przyjecia na naszej dużej sali bankietowej.<p>
+            <p><b>Zapraszamy do zapoznania się z naszą ofertą oraz do odwiedzenia nas.</b></p>
+            <button class="button-content"><a href="#">O Nas</a></button>
+        </section>
+
+        <section class="info-caffe">
+            <h2>Kawa &amp; Pizza</h2>
+            <p>W naszej kawiarni unosi się aromat świeżo parzonej kawy. Do filiżanki ulubionego naparu możesz wybrać coś słodkiego spośród szerokiej oferty naszych ciast oraz deserów. </p>
+            <div class="wrap1">
+            <img src="img/coffee.jpg" alt="coffee-picture" class="coffee-picture"></div>
+            <div class="wrap2">
+                <img src="img/pizza.jpg" alt="pizza-picture" class="pizza-picture"></div>
+
+            <h3>Polecamy naszą pizzę!</h3>
+            <p>Włoska receptura, delikatnie chrupiące ciasto, dobór najlepszych składników, sprawiają, że smak naszaj pizzy jest wyjatkowy. </p>
+            <h3>Możliwość dowozu do domu!</h3>
+            <p>Nasze menu zostało skomponowane, aby każdy mógł znaleźć coś odpowiedniego dla siebie. Zapraszamy do spróbowania naszej kuchni. </p>
+            <button class="button-content"><a href="#">Sprawdź Menu</a></button>
+        </section>
+
+        <section class="info-offer">
+            <h2>Oferujemy</h2>
+            <p>Dysponujemy dużą salą bankietową, gdzie organizujemy wszelkiego rodzaju imprezy okolicznościowe od wesela, urodzin, komunii, chrzcin, bankietu, po szkolenia dla firm.</p>
+            <img src="img/impreza.jpg" alt="imprezy okolicznościowe" class="party-picture">
+            <p>Ciekawy i nowoczesny wystrój wraz z wykwintnym jedzeniem, tworzą wyjątkowy klimat w naszym lokalu.</p>
+            <button class="button-content"><a href="#">Imprezy okolicznościowe</a></button>
+            <img src="img/catering.jpg" alt="imprezy okolicznościowe" class="catering-picture">
+            <p>Dla Gości którzy chcą spróbować naszej kuchni w gronie swoich bliskich lub organizują imprezę
+                okolicznościową, przyjęcie, bankiet zapraszamy do skorzystania z naszego menu, lub ustalenia dań do
+                przygotowania przez naszych kucharzy. Istnieje możliwość dostarczenia do domu.</p>
+            <button class="button-content"><a href="#">Catering</a></button>
+        </section>
+
+        <section class="info-newest">
+            <h2>Aktualności</h2>
+            <a href=""><div class="info-box-fst">
+                <p class="pfrist">Karnawał 2018</p>
+            </div></a>
+            <a href=""><div class="info-box-sec">
+            <p class="psec">Komunia św. 2018</p>
+        </div></a>
+            <a href=""><div class="info-box-th">
+                <p class="psec">Lorem ipsum</p>
+            </div></a>
+            <a href=""><div class="info-box-fr">
+                <p class="psec">Lorem ipsum</p>
+            </div></a>
+            <button class="button-content"><a href="#">Więcej</a></button>
+        </section>
+
+        <section class="map">
+           <div class="map-wrap">
+               <div class="map-title">
+                   <i class="icon-location"></i>
+                   <p class="how-to-find"><a href="https://www.google.pl/maps/place/Kawiarnia+Poezja/@49.9377565,18.6450642,17z/data=!3m1!4b1!4m5!3m4!1s0x4716acbf4a822e0b:0x9e6949f02af3834a!8m2!3d49.9377565!4d18.6472529?hl=pl">Znajdź Nas</a></p>
+               </div>
+           </div>
+        </section>
+
+        <section id="contact" class="info-contact">
+            <h2>Kontakt</h2>
+            <ul class="contact-list">
+                <p><b>Poezja - Kawiarnia &amp; Dom Przyjęć</b></p>
+                <li class="adress1">ul. Niepodległości 175</li>
+                <li class="adress2">44-336 Jastrzębie Zdrój - Bzie</li>
+                <i class="icon-mail-alt"></i>
+                <li class="mail">kontakt@kawiarniapoezja.pl</li>
+                    <i class="icon-phone-squared"></i>
+                <li class="phone-number1">(32) 47 00 370</li>
+                <li class="phone-number">(+48) 722 140 240</li>
+            </ul>
+            <div class="fb">
+                <p class="fb-info"><b>Bądź na bieżąco:</b></p>
+                <a href="https://www.facebook.com/kawiarniapoezja"><i class="icon-facebook-squared"></i></a>
+            </div>
+            <p><i class="icon-clock"></i><b>Godziny otwarcia:</b></p>
+            <p>Poniedziałek - Niedziela 14:00 - 22:00</p>
+       </section>
+    </article>
+</main>
+
+<footer>
+    <p> &copy; 2017 Poezja - Kawiarnia &amp; Dom przyjęć</p>
+</footer>
+</body>
+</html>
