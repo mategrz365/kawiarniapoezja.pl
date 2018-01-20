@@ -238,30 +238,23 @@ display:none;
 .pizza-picture,
 .party-picture,
 .catering-picture{
-
     width:inherit;
     min-height:260px;
-    max-width:480px;
+    max-width:540px;
     margin:0;
     padding:0;
     border: 2px solid #86A78F;
     }
 
-.info-box-fst, .info-box-sec, .info-box-th, .info-box-fr{
-	width:90%;
-	max-width:480px;
-	min-height:250px;
+.info-newest{
+padding:0;
+}
+
+.info-box-fst, .info-box-sec{
+	width:100%;
+	min-height:296px;
 	background:#FFF;
-	border:3px solid #86A78F;
-	margin:30px auto;
-}
-
-.info-box-fst{
-
-}
-
-.info-box-sec{
-
+	margin:0 auto;
 }
 
 .info-box-th, .info-box-fr{
@@ -399,6 +392,7 @@ h2:after {
 h3{
 font-family: 'Allura', cursive;
 font-size:3rem;
+text-align:center;
 }
 
 h3:before, h3:after {
@@ -443,7 +437,7 @@ p.fb-info{
 	border:1px solid #FFF;
 	padding:6px 11px;
 	display:block;
-	margin:20px auto;
+	margin:5px auto;
 	font-weight:400;
 	color:#FFF;
 	letter-spacing:1px;
@@ -451,6 +445,8 @@ p.fb-info{
 	display:inline-block;
 	box-shadow: 0px 0px 0px 3px #86A78F;
 	font-family: 'Allura', cursive;
+	border-box:box-sizing;
+	width:100%;
 }
 
 .button-content a{
@@ -460,12 +456,18 @@ p.fb-info{
     @media (min-width:480px){
 
     .picture1,
-    .picture2
-    {
-    width:49%;
-     display:inline-block;
+    .picture2{
+        width:50%;
+        display:inline-block;
     }
 
+     .flex-info-newest{
+            display:flex;
+            }
+
+     .info-box-fst,
+     .info-box-sec{
+        width:50%;
     }
     @media (min-width:768px){
         .menu-container{
@@ -518,7 +520,9 @@ p.fb-info{
    	        color:#ddd;
    	        border-bottom:1px solid #86A78F;
         }
-        .flex-info
+        .flex-info,
+        .flex-info-caffe,
+        .flex-info-offer
         {
         display:flex;
         max-width:1260px;
@@ -530,43 +534,46 @@ p.fb-info{
              width:48%;
         }
 
-        .art-right-info{
-                 border-left:1px solid rgba(134, 167, 143, 0.4);
-
+        .art-right-info, {
+                      border-left:1px solid rgba(134, 167, 143, 0.4);
                  }
 
-         .art-left-info{
 
-                         }
-
-                     .picture1,
-                         .picture2,
-                         .picture3
-                         {
-                         width:32%;
-                          display:inline-block;
-                         }
+        .picture1,
+        .picture2,
+        .picture3 {
+             width:calc(100% / 3);
+             display:inline-block;
+        }
 
         h2{
-        font-size:4.8rem;
-        margin-bottom:75px;
-            }
+             font-size:4.8rem;
+             margin-bottom:25px;
+        }
 
-             h3{
-                    font-size:3.8rem;
-                    margin-top:75px;
-                        }
+        h3{
+             font-size:3.8rem;
+             margin-top:45px;
 
-          .info p{
-          line-height:35px;
-          text-align:left;
-          margin:0 30px;
-          }
 
-          section{
-          padding-top:75px;
-          padding-bottom:75px;
-          }
+        }
+
+        .info{
+             line-height:35px;
+             text-align:left;
+             margin:0;
+         }
+
+        section{
+            padding-top:75px;
+            padding-bottom:75px;
+         }
+
+         p{
+         max-width:1260px;
+         line-height:35px;
+         padding:40px 20px;
+         }
 
     @media(min-width:1200px){
         .picture {
@@ -574,11 +581,10 @@ p.fb-info{
         }
 
         .picture1,
-                                 .picture2,
-                                 .picture3,
-                                 .picture4
-                                 {
-                                 width:24%;
-                                  display:inline-block;
-                                 }
+        .picture2,
+        .picture3,
+        .picture4{
+            width:25%;
+            display:inline-block;
+        }
     }
