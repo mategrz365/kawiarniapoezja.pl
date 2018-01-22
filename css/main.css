@@ -9,7 +9,7 @@ body{
 	font-family: 'Open Sans', sans-serif;
 	font-size: 1.8rem;
 	line-height: 24px;
-	color: #363636;
+	color: #555;/*#363636;*/
 }
 
 
@@ -230,7 +230,7 @@ display:none;
     max-width:540px;
     margin:0;
     padding:0;
-    border: 2px solid #86A78F;
+    /*border: 2px solid #86A78F;*/
     }
 
 .info-newest{
@@ -254,29 +254,6 @@ color:#FFF;
 font-size:3.0rem;
 line-height:150%;
 font-style:italic;
-}
-
-.info-contact{
-	margin:0;
-	text-align:center;
-
-}
-
-.info-contact .contact-list{
-	padding-left:0;
-}
-
-.info-contact .contact-list li{
-	list-style-type:none;
-	padding-bottom:10px 0;
-}
-
-.info-contact .contact-list .adress2, .info-contact .contact-list .mail, .info-contact .contact-list .phone-number{
-	padding-bottom:20px;
-}
-
-.fb{
-	text-align:center;
 }
 
 .map-wrap{
@@ -309,9 +286,8 @@ color:inherit;
 
 footer{
 	background:#413E4A;
-	-webkit-box-shadow: 0px -2px 10px -2px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px -2px 10px -2px rgba(0,0,0,0.75);
-    box-shadow: 0px -2px 10px -2px rgba(0,0,0,0.75)
+	color:#FFF;
+
 }
 
 footer p {
@@ -319,17 +295,34 @@ footer p {
 	margin:0 auto;
 	padding:20px 0;
 	text-align:center;
+
 }
 
-h2{
+.contact-container{
+    display:flex;
+    width:100%;
+    justify-content: space-around;
+    align-items:baseline;
+}
+
+.contact, .adress, .socials
+{
+border:1px solid red;
+text-align:center;
+}
+
+h1, h2{
 	text-align:center;
 	font-family: 'Allura', cursive;
 	font-size:3.8rem;
+	font-weight:600;
 	margin:0;
     position: relative;
     display: inline-block;
     width: 100%;
     padding:10px 0;
+    color:#c59d5f;
+
    }
 
 h2:before, h2:after {
@@ -339,7 +332,7 @@ h2:before, h2:after {
     border-radius: 2px;
     display: inline-block;
     vertical-align: middle;
-    background-color:#86A78F;
+    background-color:#c59d5f;/*#86A78F;*/
     position: relative;
     top: -4px;
 }
@@ -488,6 +481,7 @@ p.fb-info{
         margin:0 auto;
         }
 
+
         .art-left-info,
         .art-right-info{
              width:48%;
@@ -543,6 +537,12 @@ p.fb-info{
          max-width:1260px;
          line-height:35px;
          padding:40px 20px;
+         }
+
+         .contact-container{
+
+         max-width:1260px;
+         margin:0 auto;
          }
 
     @media(min-width:1200px){
