@@ -197,16 +197,13 @@ section.map {
     text-align: center;
 }
 
-<<<<<<< HEAD
+
 .menu-rest-module {
    display:none;
    min-height: 600px;
 }
 
 .menu-rest-module.active {
-=======
-.menu-rest-module.show {
->>>>>>> d8f9ec77e22b2e84cd5b6ac225e2a10c134834d6
     display: block;
 }
 
