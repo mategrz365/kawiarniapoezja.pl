@@ -44,12 +44,14 @@
 
 <main>
     <article class="content">
-
+        <div>
         <picture>
             <source srcset="img/wesele-sm.jpg" media="(max-width:480px)">
             <source srcset="img/wesele-md.jpg" media="(max-width:768px)">
             <img srcset="img/wesele-xl.jpg" alt="Poezja - kawiarnia i dom przyjęć" class="picture">
         </picture>
+            </div>
+        
       <!--  <div class="title">
        <h2 class="welcome-text">Witamy w Poezji!</h2>
         <h3 class ="about-text">KAWIARNIA & DOM PRZYJĘĆ</h3>
@@ -102,29 +104,25 @@
                           <h2>KAWIARNIA</h2>
                           <p class="separator">✻</p>
                           <p class = "art-col-p">W naszej kawiarni unosi się aromat świeżo parzonej kawy. Do filiżanki ulubionego naparu możesz wybrać coś słodkiego spośród szerokiej oferty naszych ciast oraz deserów. Jeśli zgłodniejesz nasze menu zostało skomponowane w taki sposób, aby każdy mógł wybrać coś dla siebie. Pizza, sałatki, naleśniki, taco frytki czy panierowany ser to tylko niektóre z propozycji, które znajdziesz u Nas. </p> 
-                    <!--      <h4>Polecamy naszą pizzę!</h4>
-                          <p>Włoska receptura, delikatnie chrupiące ciasto, dobór najlepszych składników, sprawiają, że smak naszaj pizzy jest wyjatkowy. </p>-->
+                
                           <h3>Możliwość dowozu do domu!</h3>                  
-                         <!-- <span class="button">Odkryj nasze Menu</span>-->
+                         
                     </div>
                 </div>
         </section>
 
 
-        <section class="menu-rest" style="padding:0">
+        <section class="menu-rest">
+            <span>Odkryj Menu naszej kawiarni</span>
           <ul class = "menu-select">  
-         <li class="menu-rest-select">   
-             PIZZA
-        </li>
-              
-        
-         <li class="menu-rest-select">SZYBKIE DANIA</li>
-         <li class="menu-rest-select">DESERY</li>
-         <li class="menu-rest-select">NAPOJE</li>
-         <li class="menu-rest-select">ALKOHOLE</li>
+         <li class="menu-rest-select" data-index=0>PIZZA</li>          
+         <li class="menu-rest-select" data-index=1>SZYBKIE DANIA</li>
+         <li class="menu-rest-select" data-index=2>DESERY</li>
+         <li class="menu-rest-select" data-index=3>NAPOJE</li>
+         <li class="menu-rest-select" data-index=4>ALKOHOLE</li>
         </ul>
 
-            <div class = "menu-rest-module show" data-show="1">
+            <div class = "menu-rest-module active" data-index="0">
                
                     <div class = "menu-rest-container">
                         <ul class="menu-rest-col">
@@ -203,7 +201,7 @@
                     </div>
                 </div>
 
-            <div class = "menu-rest-module" data-show="0">
+            <div class = "menu-rest-module" data-index="1">
                     <div class = "menu-rest-container">
                         <ul class="menu-rest-col">
                             <li class = "description">Szybkie dania</li>
@@ -275,7 +273,7 @@
                     </div>
                 </div>
 
-            <div class = "menu-rest-module" data-show="0">
+            <div class = "menu-rest-module" data-index="2">
                     <div class = "menu-rest-container">
                         <ul class="menu-rest-col">
                                 <li class = "description">Desery w pucharkach</li>
@@ -353,7 +351,7 @@
                      </div>
                 </div>
 
-            <div class = "menu-rest-module" data-show="0">
+            <div class = "menu-rest-module" data-index="3">
                 <div class = "menu-rest-container">
                     <ul class="menu-rest-col">
                           <li class = "description">Kawa</li>
@@ -456,7 +454,7 @@
                 </div>
             </div>
             
-               <div class = "menu-rest-module" data-show="0">
+               <div class = "menu-rest-module" data-index="4">
                 <div class = "menu-rest-container">
                     <ul class="menu-rest-col">
                      

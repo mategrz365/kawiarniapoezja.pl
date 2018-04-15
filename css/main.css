@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    background-image: url("../img/white_wave.png");
+    background-image: url("../img/light.png");
     margin: 0;
     padding: 0;
     font-family: 'Open Sans', sans-serif;
@@ -198,15 +198,12 @@ section.map {
 }
 
 .menu-rest-module {
-    overflow: hidden;
-    max-height: 0;
-
+   display:none;
+   min-height: 600px;
 }
 
-.menu-rest-module.show {
+.menu-rest-module.active {
     display: block;
-    min-height: 800px;
-
 }
 
 .description {
@@ -223,7 +220,7 @@ section.map {
     letter-spacing: 0.3rem;
     font-size: 2rem;
     /*  border: 1px solid #c59d5f;*/
-    margin-bottom: 50px;
+  
     background: none;
     cursor: pointer;
     color: #000;
@@ -342,7 +339,6 @@ h1, h2 {
 h3 {
     font-size: 2.2rem;
     text-align: center;
-    font-family: 'Old Standard TT', serif;
 }
 
 h3:before {
@@ -386,6 +382,7 @@ p.cont-par {
 
 span {
     color: #c59d5f;
+    
 }
 
 span.letter {
@@ -395,22 +392,6 @@ span.letter {
 
 }
 
-.button {
-    display: inline-block;
-    border-bottom: 1px solid #c59d5f;
-    text-decoration: none;
-    color: #c59d5f;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 3rem;
-    margin-top: 40px;
-    cursor: pointer;
-
-}
-
-.button:hover {
-    color: #e2b978;
-}
 
 @media (min-width: 480px) {
     .picture1,
@@ -480,11 +461,12 @@ span.letter {
         margin: 0 auto;
         align-items: center;
     }
-
+    
     .menu-rest-container {
-        background-color: #f4f4f4;
+        align-items: flex-start;
     }
 
+  
     .flex-container-bsl {
         align-items: baseline;
         max-width: 1200px;
@@ -498,9 +480,12 @@ span.letter {
         width: 46%
     }
 
-    .about, .info-caffe {
+    .about {
         padding: 85px 20px;
-
+    }
+        
+    .info-caffe {
+        padding: 85px 20px 20px;
     }
 
     .about-col-left,
@@ -545,8 +530,8 @@ span.letter {
     }
 
     .contact {
-        border-left: 1px solid #c59d5f;
-        border-right: 1px solid #c59d5f;
+        border-left: 1px solid #c59d5f80;
+        border-right: 1px solid #c59d5f80;
         padding: 10px 40px;
     }
 
@@ -567,7 +552,7 @@ span.letter {
     }
 
     section {
-        padding: 105px 50px;
+        padding: 50px 50px;
     }
 
     p {
