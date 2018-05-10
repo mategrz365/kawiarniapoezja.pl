@@ -522,7 +522,7 @@ h3{
 
 //end headers
 
-.parallax-window {
+/*.parallax-window {
     min-height: 450px;
     background: transparent;
     
@@ -536,7 +536,7 @@ h3{
          opacity: 0; 
          display: none;
     }
-}
+}*/
 
    .parallax{
             background: url(../img/parallax.jpg);
@@ -545,24 +545,28 @@ h3{
             background-size: cover;
         }
 
-.images{
+.parallax-module{
     padding: 0;
 }
 
-.image-container {
-   display: flex;
-    overflow: hidden;
- 
+.parallax-images-container {
+   display: flex;   
+   height: 450px;
+   width:100%;
 }
 
-.picture-first{
-    background-image: url(../img/coffee5.JPG);
-    width:inherit;
+.parallax-img{
     background-attachment: fixed; 
+    background-size: cover;
     background-repeat: no-repeat;
-    
+    width:inherit;
+    &:nth-of-type(1){    
+    background-image: url(../img/coffee5.JPG);
+    }
+    &:nth-of-type(2), &:nth-of-type(3){
+      display: none;  
+    }
 }
-
 
 p.fb-info {
     margin: 10px auto;
@@ -627,7 +631,7 @@ span.letter {
         */
         
         
-        .parallax-window.picture {
+        /*.parallax-window.picture {
             width: calc(100% / 2); 
             border: 10px solid #eaeaeb;
             &:nth-of-type(2){
@@ -635,13 +639,24 @@ span.letter {
                  display: block;
                  border-left: none;
             }
-        }
+        }*/
    
 /*.picture.middle{
     border-left:none;
     border-right:none;
     display: none;
 }*/
+        
+         .parallax-img{   
+            width:50%;
+          &:nth-of-type(2){
+              display: block;
+              background-image: url(../img/coffee4.jpg);
+             } 
+          &:nth-of-type(3){
+              display: none;  
+            }
+        }
         
 
         .flex-container{
@@ -830,7 +845,7 @@ span.letter {
     @media (min-width: 1024px) {
         
         
-        .parallax-window.picture {
+      /*  .parallax-window.picture {
             width: calc(100% / 3); 
             border: 10px solid #eaeaeb;
         &:nth-of-type(3){
@@ -838,7 +853,10 @@ span.letter {
             opacity: 1; 
             border-left: none;
             }
-        }
+        }*/
+        
+     
+
 
         .page-header {
             position: fixed;
@@ -933,6 +951,14 @@ span.letter {
         .par {          
             line-height: 35px;
             padding: 10px 80px;
+        }
+        
+          .parallax-img{   
+            width:calc(100% / 3);         
+            &:nth-of-type(3){
+              display: block; 
+              background-image: url(../img/coffee3.jpg);
+            }
         }
         
          .art-col-offer{
