@@ -33,8 +33,7 @@ $(function() {
        
     });
     
-    $(".banner-text").fadeIn(1000);
-    
+       
     
     var $arrow = $(".arrow");
     
@@ -45,16 +44,28 @@ $(function() {
             $arrow.removeClass("animation");
         
         if($(window).scrollTop()>50)
-            $(".page-header").css("box-shadow", "0 0 3px #000");
+            $(".page-header").addClass("ph-shadow");
             else
-            $(".page-header").css("box-shadow", "none");    
+            $(".page-header").removeClass("ph-shadow");    
+                
+        
+         //test
+         if($(window).scrollTop()>100)
+            $(".test-effect").addClass("test-effect-animation");
     });
         
+   
+    
+  
+         
+  
         
             
     $(".icon-up-big").click(function() {
        $("html,body").animate({scrollTop:0}, 500);
     });
+    
+    
     
     
         

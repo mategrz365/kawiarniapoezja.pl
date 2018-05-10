@@ -42,24 +42,43 @@
 
 <main>
     <article class="content">
-        
-          <!--  IE doesn't support srcset (Picturefill)--><!--<picture>
-            <source srcset="img/wesele-sm.jpg" media="(max-width:480px)">
-            <source srcset="img/wesele-md.jpg" media="(max-width:768px)">
-            <img srcset="img/wesele-xl.jpg" alt="Poezja - kawiarnia i dom przyjęć" class="picture">
-        </picture>-->
-        
-        <div class = "banner">            
-            <div class="border-top"></div>
+        <div class = "banner">
+            <div class="overlay-test"></div>
+            <!--<div class="border-top"></div>-->
             <div class=banner-text>            
-                <h2>KAWIARNIA & DOM PRZYJĘĆ</h2>
+               <h1>KAWIARNIA & DOM PRZYJĘĆ</h1>
+         <!--       <ul class = "test-effect">
+                    <li>K</li>
+                    <li>A</li>
+                    <li>W</li>
+                    <li>I</li>
+                    <li>A</li>
+                    <li>R</li>
+                    <li>N</li>
+                    <li>I</li>
+                    <li>A</li>                          
+                    <li>&nbsp</li>                          
+                    <li>&</li>                          
+                    <li>&nbsp</li>                          
+                    <li>D</li>                          
+                    <li>O</li>                          
+                    <li>M</li>                          
+                    <li>&nbsp</li>                          
+                    <li>P</li>                          
+                    <li>R</li>                          
+                    <li>Z</li>                          
+                    <li>Y</li>                          
+                    <li>J</li>                          
+                    <li>Ę</li>                          
+                    <li>Ć</li>                          
+                </ul>-->
             </div>
-            <div class="border-bottom"></div>
+           <!-- <div class="border-bottom"></div>-->
         </div>
         
    
         <section id="about" class="about">
-            <h1>ZAPRASZAMY DO NAS</h1>
+            <h2>ZAPRASZAMY DO NAS</h2>
             <p class="separator">✻</p>
 
             <div class="flex-container bsl">
@@ -79,12 +98,18 @@
           
         </section>
         
+       <!-- <section class = "images">
+            <div class = image-container>
+                <div class = "picture-first"></div>
+                <div class = "picture-second"></div>
+                <div class = "picture-third"></div>
+            </div>     
+        </section>-->
+        
         <!--to do:rewrite the parallax effect-->
-        <div class="image-container">
+       <div class="image-container">
             <div class="parallax-window picture" data-parallax="scroll" data-image-src="img/coffee2.jpg"></div>
-
-            <div class="parallax-window picture middle" data-parallax="scroll" data-image-src="img/coffee3.jpg"></div>
-
+            <div class="parallax-window picture" data-parallax="scroll" data-image-src="img/coffee3.jpg"></div>
             <div class="parallax-window picture" data-parallax="scroll" data-image-src="img/coffee5.jpg"></div>
         </div>
 
@@ -104,7 +129,7 @@
                         </div> --> 
                      </div>
                      <div class="art-col">
-                          <h1>KAWIARNIA</h1>
+                          <h2>KAWIARNIA</h2>
                           <p class="separator">✻</p>
                           <p class = "art-col-p">W naszej kawiarni unosi się aromat świeżo parzonej kawy. Do filiżanki ulubionego naparu możesz wybrać coś słodkiego spośród szerokiej oferty naszych ciast oraz deserów. Menu naszej kawiarni zostało skomponowane w taki sposób, aby każdy mógł wybrać coś dla siebie. Pizza, sałatki, naleśniki, taco frytki czy panierowany ser to tylko niektóre z propozycji, które znajdziesz u Nas. </p> 
                             <i class="icon-signal"></i>
@@ -579,14 +604,15 @@
         </section>
                 
 
-        <div class="parallax-window" data-parallax="scroll" data-image-src="img/parallax.jpg"></div>
+        <!--<div class="parallax-window" data-parallax="scroll" data-image-src="img/parallax.jpg"></div>-->
+        <div class="parallax" ></div>
 
 
      
     <section class="info-party" id="party">
             <div class="flex-container" >
                 <div class="art-col-offer">
-                    <h1>IMPREZY OKOLICZNOŚCIOWE</h1>
+                    <h2>IMPREZY OKOLICZNOŚCIOWE</h2>
                     <p class="separator">✻</p>
                     <p class = "par">Dysponujemy dużą salą bankietową, gdzie organizujemy wszelkiego rodzaju imprezy okolicznościowe
                         od wesela, urodzin, komunii, chrzcin, bankietu, po szkolenia dla firm. Nasza sala pozwala
@@ -609,7 +635,7 @@
                   <!--  <img class ="img" src="img/catering.jpg" alt="imprezy okolicznościowe">-->
                 </div>
                 <div class="art-col-offer">
-                    <h1>CATERING</h1>
+                    <h2>CATERING</h2>
                     <p class="separator">✻</p>
                     <p class = "par">Dla Gości którzy chcą spróbować naszej kuchni w gronie swoich bliskich lub organizują imprezę
                         okolicznościową, przyjęcie, bankiet zapraszamy do skorzystania z naszego menu, lub ustalenia dań
@@ -618,13 +644,7 @@
                 </div>
             </div>
         </section>
-        
-           <!-- <div class="image-container">
-                <div class="parallax-window picture" data-parallax="scroll" data-image-src="img/coffee2.jpg"></div>
-                <div class="parallax-window picture middle" data-parallax="scroll" data-image-src="img/coffee3.jpg"></div>
-                <div class="parallax-window picture" data-parallax="scroll" data-image-src="img/coffee5.jpg"></div>
-            </div>-->
-
+   
         <section class="map">
             <div class="map-wrap">
                 <div class="map-title">
@@ -678,6 +698,5 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="js/parallax.min.js"></script>
     <script src="js/main.js"></script>
-    <!--to do:lazy load-->
 </body>
 </html>

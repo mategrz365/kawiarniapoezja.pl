@@ -1,6 +1,7 @@
 @import 'mixins';
 @import 'keyframes';
 
+//variables
 $gold: #c59d5f;
 
 html {
@@ -18,11 +19,18 @@ body {
 }
 
 
+html, body{
+     overflow-x:hidden; //find a reason 
+}
+
+
 .page-header { //to fix on mobile
-    width: 100%;      
+    width: 100%; 
+    background-color:#fff;   
     position: fixed;
     top:0;
     left:0;
+    z-index: 50;
 }
 
 
@@ -69,10 +77,8 @@ body {
 
 .header-nav .nav li {
     border-bottom: 1px solid rgba(197, 157, 95, 0.85);
-    padding-bottom: 15px;
-    padding-top: 15px;
-    list-style-type: none;
-    padding-left: 0;
+    padding: 20px 0;
+    list-style-type: none;   
     text-align: center;
 }
 
@@ -186,7 +192,7 @@ body {
 
 .banner{
     @include banner-property;
-    margin: 0;
+    margin:0;
     border-left:none;
     border-right:none;
     background-position: 70%;
@@ -195,41 +201,98 @@ body {
    
 }
 
+.overlay-test{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .15);
+        
+        
+}
+
 .banner-text{
-    display:none;    
-    width:400px;
-    padding: 30px 0;  
-    height: auto;
+    padding: 30px 0;      
     position: absolute;
     top:50%;
     transform: translateY(-50%); //why?        
     @include vertical-center;
     margin:auto;
-    
+   }
+
+/*.banner-text-test{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
 }
 
-.border-top, .border-bottom{
+.test-effect{
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.test-effect li{
+    color:white;
+   list-style: none;
+    font-size: 1.8rem;
+    text-shadow: 0 0 20px #fff, 0 0 2px #fff;;
+    font-weight: bold;
+    letter-spacing: 6px;
+    filter: blur();
+}*/
+
+    
+/*.test-effect-animation{
+    animation: test-animation 2s linear forwards;
+}
+
+@keyframes test-animation{
+    0%{transform:rotate(0deg) translateY(0px); opacity:1;  filter: blur();}
+    100%{transform:rotate(45deg) translateY(-200px); opacity:0;  filter: blur(10px);}
+}*/
+
+
+
+/*.border-top, .border-bottom{
     position: absolute;
     width:200px;
     height:120px;
-    border: 1.5px solid $gold;
+    border: 1.5px solid $gold;    
     @include vertical-center;
 }
 
 .border-bottom{
-   bottom:20%;
+   bottom:15%;
+    box-shadow: -3px 2px 10px -3px rgba(197,157,95,1), 3px 2px 10px -3px rgba(197,157,95,1);
     border-top:none;
 }
 
 .border-top{
-    top:20%;
+    top:15%;
+    box-shadow: -3px -2px 10px -3px rgba(197,157,95,1), 3px -2px 10px -3px rgba(197,157,95,1);
     border-bottom:none;
-}
+}*/
 
-
-.picture {
+.img-col-offer{
+    height: 450px;
     width: 100%;
+        
 }
+
+
+ .first{
+    background: url(../img/_N1N1417.jpg) no-repeat;
+    background-position: center;
+}
+
+.second{
+    background: url(../img/_N1N1417.jpg) no-repeat;
+    background-position: center;
+}
+
 
 .img{
 max-height: 700px;
@@ -246,8 +309,9 @@ section.map {
 
 .menu-rest{
     background-image: url(../img/circles-and-roundabouts.png.png);
-    border: 10px solid #eaeaeb;
-    margin: 0 20px;
+    border-bottom: 10px solid #eaeaeb;
+    border-top: 10px solid #eaeaeb;
+    margin: 0;
     margin-bottom: 20px;
 }
 
@@ -273,34 +337,32 @@ section.map {
 }
 
 .menu-select{
-    margin:20px 10px;    
-    padding:0;  
+    display: flex;
+    flex-flow: column;
+     margin:20px 10px;    
+    padding:0;
    
 }
 
-.btn{
-   display: inline-block;   
-   padding: 20px 0;       ;   
-    width: calc(85%/5 - 2px);
-    letter-spacing: 0.3rem;
-    font-size: 2rem;       
-    cursor: pointer;
+.btn{   
+    width: 100%;    
+    padding: 20px 0;     
+    margin-bottom: 5px;
+    background: rgba(197,157,95, 0.5);
+    font-size: 2rem; 
+    letter-spacing: 0.3rem;   
     color: #fff;
     font-weight: bold;
-    border-right: 1px solid $gold;   
-    background: rgba(197,157,95, 0.5);
-    animation: resize 2s forwards;
+    cursor: pointer;  
+    list-style: none;
     &:hover{
     background-color: $gold;             
-    }
-    &:last-of-type{
-        border: none;
     }
 }
 
 .menu-rest-col {
     margin: 0;
-    padding: 0 20px;
+    padding: 0;
     > li {
     list-style-type: none;
     text-align: left;
@@ -370,6 +432,10 @@ section.map {
     position: relative;
 }
 
+.contact-container{
+    padding: 65px 0;
+}
+
 .contact-module{
   margin:0 10px;
   padding: 0;
@@ -407,20 +473,37 @@ section.map {
 
 
 .animation {
-    animation: show 1s forwards;  
-}
+    animation: show 1s forwards; 
+   }
 
 //end footer
 
+//general
 
 p{
     line-height: 35px;
 }
 
+section{
+    padding: 40px 30px;
+}
+
+//end general
+
+//headers h1 - h3
+
 h1 {
+    font-size: 4rem;
+    text-align: center;
+    color:white;
+    line-height: 6.4rem;
+    text-shadow: 0 0 20px #000;
+}
+
+h2 {
     text-align: center;
     font-family: 'Old Standard TT', serif;
-    font-size: 2rem;
+    font-size: 2.8rem;
     font-weight: 400;
     margin: 0;
     position: relative;
@@ -431,43 +514,54 @@ h1 {
     letter-spacing: 2.5px;
 }
 
-h2 {
-    font-size: 2.2rem;
-    text-align: center;
-    text-shadow:0 0 2px #fff;
-    :before {
-    margin-right: 10px;
-    }
-    :after {
-    margin-left: 10px;
-    }
-}
 
 h3{
     margin-top:30px;
     font-size: 2rem;
 }
 
+//end headers
+
 .parallax-window {
     min-height: 450px;
     background: transparent;
+    
 }
 
 .parallax-window.picture {
-    width: calc(100% / 3);
-   /* margin: 0 5px;*/
-    border: 10px solid #eaeaeb;
+    width:100%;  
+    border-bottom: 10px solid #eaeaeb;
+    border-top: 10px solid #eaeaeb;
+    &:nth-of-type(2), &:nth-of-type(3){
+         opacity: 0; 
+         display: none;
+    }
 }
-.picture.middle{
-    border-left:none;
-    border-right:none;
+
+   .parallax{
+            background: url(../img/parallax.jpg);
+            height: 450px;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+.images{
+    padding: 0;
 }
 
 .image-container {
-    display: flex;
-   /* margin:0 20px;*/
+   display: flex;
+    overflow: hidden;
+ 
 }
 
+.picture-first{
+    background-image: url(../img/coffee5.JPG);
+    width:inherit;
+    background-attachment: fixed; 
+    background-repeat: no-repeat;
+    
+}
 
 
 p.fb-info {
@@ -493,264 +587,366 @@ span.letter {
     background-color: $gold;
 }
 
-@media (min-width: 480px) {
-       
-    .banner{
-    @include banner-property;  
-    background-position: 70%;
-    background-image: url(../img/wesele-md.jpg);
-}
-}
 
-@media (min-width: 768px) {
- 
-    .page-header {
-        position: fixed;
-        top:0;
-        transition: opacity 0.3s ease-in-out;
-        background-color: #fff;
-        z-index: 1;
-    }
-    
-       .header-container {
-        margin-left: auto;
-        margin-right: auto;
-        position: relative;
-            .hamburger {
-                display: none;
-            }  
-    }
 
-    .header-nav {
-        position: absolute;
-        top: 5px;
-        right: 20px;
-        background-color: transparent;
-        display: block !important;
-    }
 
-    .header-nav .nav {
-        display: block;
-    }
+    @media (min-width: 480px) {
 
-    .header-nav .nav li {
-        border-bottom: none;
-        list-style-type: none;
-        display: inline-block;
-        font-size: 2.0rem;
-        margin-left: 15px;
-        margin-right: 15px;
-    }
-
-    .header-nav .nav li:last-child {
-        margin-right: 0;
-    }
-
-    .header-nav .nav li a{
-        display: block;
-        position:relative;     
-        padding-bottom:5px;
-    }
-    
-    
-    .header-nav .nav li a:after {
-       content: " ";
-       position: absolute;
-        width:100%;
-        height:2px;
-        bottom:0;
-        left:0;
-        background: $gold;        
-        z-index:-1;    
-        transform: scaleX(0);
-        transform-origin: left;
-        transition: .5s;
-    }
-    
-    .header-nav .nav li a:hover {
-        opacity:0.8;        
-    }
-    
-    .header-nav .nav li a:hover:after {
-        transform: scaleX(1);        
-    }
-    
-    .header-nav .nav li:last-child a:hover{
-        border: none;
-    }
-    
-    .header-nav .nav li:last-child a:after{
-        background: #fff;
-    }
-
-    .flex-container{
-        display: flex;
-        max-width: 1300px;
-        justify-content: center;
-        margin: 0 auto;
-        align-items: center;     
-    }
         
-        .bsl{
-             align-items: baseline;
+          .banner{             
+                background-position: 50%;
+                background-image: url(../img/wesele-xlc.jpg);  
+        }
+        
+        
+        /*.border-bottom{
+            bottom:20%;   
+        }
+
+        .border-top{
+            top:20%;
+        }*/
+        
+        .menu-rest-col {
+            margin: 0;
+            padding: 0 20px;
+            }
+        
+
+
+}
+    
+
+
+    @media (min-width: 768px) {
+
+        
+       /* .test-effect li{
+            font-size: 3.8rem;
+        }
+        */
+        
+        
+        .parallax-window.picture {
+            width: calc(100% / 2); 
+            border: 10px solid #eaeaeb;
+            &:nth-of-type(2){
+                 opacity: 1; 
+                 display: block;
+                 border-left: none;
+            }
+        }
+   
+/*.picture.middle{
+    border-left:none;
+    border-right:none;
+    display: none;
+}*/
+        
+
+        .flex-container{
+            display: flex;
+            max-width: 1300px;
+            justify-content: center;
+            margin: 0 auto;
+            align-items: center;     
+        }
+
+            .bsl{
+                 align-items: baseline;
+                }
+
+            .str{
+                align-items: flex-start;
+             }
+        
+        .menu-rest{            
+            border: 10px solid #eaeaeb;
+            margin: 0 20px;
+            margin-bottom: 20px;
+        }
+
+
+        .addbreak {
+            margin-top: 60px;
+        }
+
+        .menu-rest-col {
+            width: 46%
+        }
+
+        .about {
+            margin: 0px 20px;      
+        }
+
+       .about-column{
+        width: 50%;
+        text-align: left;  
+        }
+
+        .border-left{
+            border-left: 1px solid rgba(197, 157, 95, 0.4);
             }
 
-        .str{
-            align-items: flex-start;
-         }
-    
-   
-    .addbreak {
-        margin-top: 60px;
-    }
 
-    .menu-rest-col {
-        width: 46%
-    }
-
-    .about {
-        margin: 0px 20px;
-        padding: 80px 160px;
-    }
-    
-   .about-column{
-    width: 50%;
-    text-align: left;  
-    }
-    
-    .border-left{
-        border-left: 1px solid rgba(197, 157, 95, 0.4);
+        .info-caffe {
+            padding: 85px 20px 20px;
         }
-    
-        
-    .info-caffe {
-        padding: 85px 20px 20px;
-    }
-    
-    .menu-rest{
-        padding:0;
-    }
-    
-    .info-party, .info-catering{
-        margin:0 20px;
-        border: 10px solid #eaeaeb;
-    }
-    
-    .info-party{
-        margin-top:10px;
-    }
-    
-     .info-catering{       
-        border-top: none;
-        margin-bottom: 10px;
-    }
 
- 
+        .menu-rest{
+            padding:0;
+        }
 
-    .img-col {
-        width: 55%;
+        .info-party, .info-catering{
+            margin:0 20px;
+            border: 10px solid #eaeaeb;
+            padding: 0;
+        }
 
-    }
+        .info-party{
+            margin-top:20px;
+        }
 
-    .art-col {
-        width: 45%;
-    }
+         .info-catering{       
+            border-top: none;
+            margin-bottom: 20px;
+        }
 
-    .art-col-p {
-        padding:60px;
-        padding-top: 0;
-        padding-bottom: 20px;
-        text-align: left;
-        
-    }
 
-    .art-col-offer{
-         width: 45%;
-    }
-    .img-col-offer {
-        width: 55%;
-         margin:10px;
-    }
 
-    .art-col-offer {
+        .img-col {
+            width: 55%;
 
-        margin: 15px;
-    }
-    
-     .first{
-            background-image: url(../img/_N1N1417.jpg);
+        }
+
+        .art-col {
+            width: 45%;
+        }
+
+        .art-col-p {
+            padding:60px;
+            padding-top: 0;
+            padding-bottom: 20px;
+            text-align: left;
+
+        }
+
+        .art-col-offer{
+             width: 50%;
+        }
+        .img-col-offer {
+            width: 50%;
+            margin:20px;            
+        }
+
+        .art-col-offer {
+
+            margin: 15px;
+        }
+
+        .img-col-offer{
+            height: 500px;        
+            background-size: cover;
+            overflow: hidden;
+
+        }
+
+        .contact-module.border {
+            border-left: 1px solid #c59d5f80;
+            border-right: 1px solid #c59d5f80;
+            padding: 10px 20px;
         }
         
-        .second{
-            background-image: url(../img/catering.jpg);
+        
+        h2 {
+            font-size: 3.2rem;
+            padding: 0;
+            line-height: 120%;
         }
-    
-    .img-col-offer{
-        height: 500px;        
-        background-size: cover;
-        overflow: hidden;
+        
+
+        .par {          
+            line-height: 35px;
+            padding: 10px 40px;
+        }
+
+
+        .about-p-left {
+            padding-right: 60px;
+        }
+
+        .about-p-right {
+            padding-left: 60px;
+        }
+
+        .contact-info{
+            padding: 0;
+        }
+
+        .contact-container {
+            max-width: 1260px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 60px 0;
+            display: flex;        
+            justify-content: space-around;
+            align-items: center;
+        }
+
+
+            .banner{
+                @include banner-property;
+                background-position: 50%;
+                background-image: url(../img/wesele-xlc.jpg);  
+
+            }
+
+     
+        .separator{
+            margin-top:0;
+            color:$gold;
+        }
+        
+        .menu-select{             
+            flex-direction: row;  
+             height: 90px;
+            
+        }
+
+        .btn{              
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-right: 1px solid $gold; 
+            position: relative;
+            &:last-of-type{
+                border: none;
+            }
+        }
        
     }
 
-    .contact-module.border {
-        border-left: 1px solid #c59d5f80;
-        border-right: 1px solid #c59d5f80;
-        padding: 10px 20px;
-    }
 
-    h1 {
-        font-size: 4.0rem;
-        padding: 0;
-        line-height: 120%;
-    }
-    
-    h2{
-        font-size: 3.0rem;
-    }
-    
-    .banner-text{
-        width:600px;
-    }
-
-    .par {
-        max-width: 1260px;
-        line-height: 35px;
-        padding: 10px 80px;
-    }
-
-
-    .about-p-left {
-        padding-right: 60px;
-    }
-
-    .about-p-right {
-        padding-left: 60px;
-    }
-
-    .contact-container {
-        max-width: 1260px;
-        width: 100%;
-        margin: 0 auto;
-        padding: 60px 0;
-        display: flex;        
-        justify-content: space-around;
-        align-items: center;
-    }
-
+    @media (min-width: 1024px) {
         
-        .banner{
-            @include banner-property;
-            background-position: 50%;
-            background-image: url(../img/wesele-xlc.jpg)/*, linear-gradient(to right, #304352, #d7d2cc)*/;  
-            
+        
+        .parallax-window.picture {
+            width: calc(100% / 3); 
+            border: 10px solid #eaeaeb;
+        &:nth-of-type(3){
+            display: block;
+            opacity: 1; 
+            border-left: none;
+            }
         }
-    
-    
-    .separator{
-        margin-top:0;
-        color:$gold;
-    }
-    
+
+        .page-header {
+            position: fixed;
+            top:0;
+            transition: opacity 0.3s ease-in-out;
+            background-color: #fff;
+            z-index: 1;
+        }
+
+        .ph-shadow{
+            box-shadow: 0 0 3px #000;
+        }
+
+           .header-container {
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+                .hamburger {
+                    display: none;
+                }  
+        }
+
+        .header-nav {
+            position: absolute;
+            top: 5px;
+            right: 20px;
+            background-color: transparent;
+            display: block;
+            padding:0;
+            padding-right: 5px;
+        }
+
+        .header-nav .nav {
+            display: block;
+
+        }
+
+        .header-nav .nav li {
+            border-bottom: none;
+            list-style-type: none;
+            display: inline-block;
+            font-size: 2.0rem;
+            margin: 0 15px;
+            padding: 15px 0;
+        }
+
+        .header-nav .nav li:last-child {
+            margin-right: 0;
+        }
+
+        .header-nav .nav li a{
+            display: block;
+            position:relative;     
+            padding-bottom:5px;
+        }
+
+
+        .header-nav .nav li a:after {
+           content: " ";
+           position: absolute;
+            width:100%;
+            height:2px;
+            bottom:0;
+            left:0;
+            background: $gold;        
+            z-index:-1;    
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: .5s;
+        }
+
+        .header-nav .nav li a:hover {
+            opacity:0.8;        
+        }
+
+        .header-nav .nav li a:hover:after {
+            transform: scaleX(1);        
+        }
+
+        .header-nav .nav li:last-child a:hover{
+            border: none;
+        }
+
+        .header-nav .nav li:last-child a:after{
+            background: #fff;
+        }
+        
+        .about {        
+            padding: 80px 160px;
+        }
+        
+        .par {          
+            line-height: 35px;
+            padding: 10px 80px;
+        }
+        
+         .art-col-offer{
+             width: 45%;
+        }
+        .img-col-offer {
+            width: 55%;                 
+        }
+        
+        h2 {
+            font-size: 4.0rem;            
+        }
+
+
     }
 
 
