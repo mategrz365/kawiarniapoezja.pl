@@ -1,15 +1,15 @@
-@mixin banner-property{
+@mixin banner-property {
     background-repeat: no-repeat;
-    background-size: cover;    
+    background-size: cover;
     background-attachment: fixed;
     height: calc(100vh - 66px - 40px);
     overflow: hidden;
-    margin: 0 20px;    
+    margin: 0 20px;
     border: 10px solid #eaeaeb;
 }
 
-@mixin vertical-center{
-    left:0;
-    right:0;
-    margin:0 auto;
+@mixin vertical-center {
+    left: 0;
+    right: 0;
+    margin: 0 auto;
 }
