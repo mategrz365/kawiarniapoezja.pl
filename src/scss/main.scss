@@ -1,22 +1,31 @@
+//imports
 @import 'mixins';
 @import 'keyframes';
 
 //variables
+$default-color: #FFF;
 $gold: #c59d5f;
 $gray: #eaeaeb;
+$darkgray: #413E4A;
+$footer-color: #34313B;
+$default-font-stack: 'Open Sans',
+'Arial',
+sans-serif;
+$logo-font-stack: 'Allura',
+cursive;
+$header-font-stack: 'Old Standard TT',
+serif;
 
-
-
-
+//base 
 html {
     font-size: 62.5%;
 }
 
 body {
-    background-color: #fff;
+    background-color: $default-color;
     margin: 0;
     padding: 0;
-    font-family: 'Open Sans', sans-serif;
+    font-family: $default-font-stack;
     font-size: 1.6rem;
     line-height: 2.4rem;
     color: #555;
@@ -24,35 +33,20 @@ body {
 
 html,
 body {
-    overflow-x: hidden; //find a reason 
-}
-
-.tester {
-    background: url(../img/coffee1.jpg);
-    height: 400px;
-    background-position: 70%;
-    background-size: cover;
+    overflow-x: hidden; //to fix
 }
 
 .page-header {
     width: 100%;
-
-    background-color: #fff;
+    background-color: $default-color;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 50;
 }
 
-
-.hamburger {
-    position: absolute;
-    top: 11px;
-    right: 10px;
-}
-
 .logo {
-    font-family: 'Allura', cursive;
+    font-family: $logo-font-stack;
     color: #555;
     font-size: 4.8rem;
     margin: 0;
@@ -63,7 +57,7 @@ body {
     }
 }
 
-.logo-feather {
+.logo-img {
     position: absolute;
     top: 10px;
 }
@@ -77,8 +71,6 @@ body {
     padding: 0;
     width: 100%;
     margin: 0 auto;
-
-
 }
 
 .header-nav.is-active .nav {
@@ -87,7 +79,7 @@ body {
     display: block;
     height: calc(100vh - 66px);
     /*   display: flex;
-    flex-direction: column;*/
+    flex-direction: column;*/ //FIX IT!
 }
 
 .header-nav .nav li {
@@ -111,6 +103,9 @@ body {
 }
 
 .hamburger {
+    position: absolute;
+    top: 11px;
+    right: 10px;
     padding: 15px 15px;
     display: inline-block;
     cursor: pointer;
@@ -216,50 +211,8 @@ body {
     background-position: 70%;
     background-image: url(../img/wesele-sm.jpg);
     position: relative;
-
-    /*transition: all 8s ease-in;*/
-}
-
-/*.zout {
-    background-size: 120%;
-}
-
-
--webkit-background-size: 110%;
-    will-change: transform;
-    backface-visibility: hidden;
-    transform: perspective(1000px);
-     //bug in Google Chrome!
-
-}*/
-
-/*@keyframes zoom {
-    0% {
-        background-size: 110% auto;
-        -webkit-background-size: 110%;
-        transform: scale(1);
-    }
-    100% {
-        background-size: 120% auto;
-        -webkit-background-size: 120%;
-        transform: scale(1.1);
-    }
-}*/
-
-/*.banner-test {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url(../img/wesele-xlc.jpg) no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-
-    animation: zoom 7s forwards;
-}*/
-
-.overlay-test {
+} //animation-background?
+.banner-overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -272,53 +225,35 @@ body {
     padding: 30px 0;
     position: absolute;
     top: 50%;
-    transform: translateY(-50%); //why?        
+    transform: translateY(-50%);
     @include vertical-center;
     margin: auto;
 }
 
-.arrow-down {
+.banner-line {
+    width: 300px;
+    height: 5px;
+    display: inline-block;
+    text-align: center;
+    background: linear-gradient(to right, $default-color, $gold);
+    box-shadow: 0 0 30px #000;
+    animation: changeOpacity 4s;
+}
 
+.banner-arrow-down {
     width: 46px;
     height: 46px;
-    border: 5px solid #fff;
+    border: 5px solid $default-color;
     border-radius: 50%;
     position: absolute;
     left: 50%;
     bottom: 5%;
-    transform: translateX(-50%); //center?
+    transform: translateX(-50%);
     box-shadow: 0 0 20px #000;
     &:hover {
         cursor: pointer;
         background-color: $gold;
     }
-}
-
-
-
-
-.banner-text-test {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.test-effect {
-    padding: 0;
-    margin: 0;
-    display: flex;
-}
-
-.test-effect li {
-    color: white;
-    list-style: none;
-    font-size: 1.8rem;
-    text-shadow: 0 0 20px #fff, 0 0 2px #fff;
-    ;
-    font-weight: bold;
-    letter-spacing: 6px;
-    filter: blur();
 }
 
 /*.test-effect-animation{
@@ -330,30 +265,9 @@ body {
     100%{transform:rotate(45deg) translateY(-200px); opacity:0;  filter: blur(10px);}
 }*/
 
-/*.border-top, .border-bottom{
-    position: absolute;
-    width:200px;
-    height:120px;
-    border: 1.5px solid $gold;    
-    @include vertical-center;
-}
-
-.border-bottom{
-   bottom:15%;
-    box-shadow: -3px 2px 10px -3px rgba(197,157,95,1), 3px 2px 10px -3px rgba(197,157,95,1);
-    border-top:none;
-}
-
-.border-top{
-    top:15%;
-    box-shadow: -3px -2px 10px -3px rgba(197,157,95,1), 3px -2px 10px -3px rgba(197,157,95,1);
-    border-bottom:none;
-}*/
-
 .art-col {
     margin-top: 20px;
 }
-
 
 .img-col-offer {
     height: 450px;
@@ -362,7 +276,13 @@ body {
 
 .art-col-offer {
     margin-top: 20px;
+}
 
+.tester {
+    background: url(../img/coffee1.jpg);
+    height: 400px;
+    background-position: 70%;
+    background-size: cover;
 }
 
 .first {
@@ -374,7 +294,6 @@ body {
     background: url(../img/_N1N1417.jpg) no-repeat;
     background-position: center;
 }
-
 
 .img {
     max-height: 700px;
@@ -433,7 +352,7 @@ section.map {
     background: rgba(197, 157, 95, 0.5);
     font-size: 2rem;
     letter-spacing: 0.3rem;
-    color: #fff;
+    color: $default-color;
     font-weight: bold;
     cursor: pointer;
     list-style: none;
@@ -504,12 +423,12 @@ section.map {
     }
     a {
         text-decoration: none;
-        color: #fff;
+        color: $default-color;
     }
 }
 
 .pulse {
-    background: #413E4A;
+    background: $darkgray;
     border-radius: 50%;
     display: block;
     position: absolute;
@@ -526,30 +445,15 @@ section.map {
     left: -2px;
     width: inherit;
     height: inherit;
-    /*  transform: translate(-49%, -9%);*/
-    /*width: 100%;
-height: 100%;*/
     background: transparent;
     border-radius: 50%;
-    border: 2px solid #413E4A;
-    animation: pulse-test 1s linear infinite;
+    border: 2px solid $darkgray;
+    animation: pulse 1s linear infinite;
 }
-
-@keyframes pulse-test {
-    0% {
-        transform: scale(1);
-        opacity: 0;
-    }
-    100% {
-        transform: scale(1.5);
-        opacity: 1;
-    }
-}
-
 
 .contact-info {
-    background-color: #413E4A;
-    color: #fff;
+    background-color: $darkgray;
+    color: $default-color;
     position: relative;
 }
 
@@ -569,8 +473,8 @@ height: 100%;*/
 
 .copyright p {
     width: 100%;
-    color: #FFF;
-    background-color: #34313B;
+    color: $default-color;
+    background-color: $footer-color;
     margin: 0 auto;
     padding: 15px 0;
     text-align: center;
@@ -581,13 +485,12 @@ height: 100%;*/
 .arrow {
     width: 100px;
     height: 60px;
-    background-color: #34313B;
+    background-color: $footer-color;
     border-top-right-radius: 60px;
     border-top-left-radius: 60px;
     text-align: center;
     position: absolute;
     z-index: 2;
-    /*@include vertical-center;*/
     left: 50%;
     transform: translateX(-50%);
 }
@@ -619,29 +522,10 @@ h1 {
     letter-spacing: 3px;
 }
 
-.h-line {
-    display: inline-block;
-    text-align: center;
-    width: 300px;
-    border: 2px solid $gold;
-    box-shadow: 0 0 20px #000;
-    animation: line 4s;
-}
-
-
-
-
-/*h1 span::before,
-h1 span::after,
-    {
-    content: '/A';
-    white-space: pre;
-    background: white;
-}*/
 
 h2 {
     text-align: center;
-    font-family: 'Old Standard TT', serif;
+    font-family: $header-font-stack;
     font-size: 2.8rem;
     font-weight: 400;
     margin: 0;
@@ -882,11 +766,10 @@ span.letter {
         padding: 10px 20px;
     }
 
-    .h-line {
-
+    .banner-line {
         width: 400px;
-
     }
+
     h2 {
         font-size: 3.2rem;
         padding: 0;
@@ -928,45 +811,8 @@ span.letter {
         @include banner-property;
         background-position: 50%;
         background-image: url(../img/wesele-xlc.jpg);
-        /* position: relative;
-        height: calc(100vh - 66px - 40px);
-        overflow: hidden;*/
     }
 
-    /* .banner:after {
-        content: ' ';
-        position: absolute;
-        z-index: -1;
-        left: 0;
-        bottom: 0;
-
-    }
-    .banner:before {
-        content: ' ';
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        backface-visibility: hidden;
-        transform: translateZ(0) scale(1.0, 1.0);
-        background-image: url(../img/wesele-xlc.jpg);
-        background-size: cover;
-        background-attachment: fixed;
-        animation: zoom 20s linear 10ms infinite;
-        transition: all 0.2s ease-in-out;
-        z-index: -2;
-
-        @keyframes zoom {
-            0% {
-                transform: scale(1)
-            }
-            100% {
-                transform: scale(1.3)
-            }
-        }
-
-    }*/
     .menu-select {
         flex-direction: row;
         height: 90px;
@@ -991,7 +837,7 @@ span.letter {
         position: fixed;
         top: 0;
         transition: opacity 0.3s ease-in-out;
-        background-color: #fff;
+        background-color: $default-color;
         z-index: 2;
     }
 
@@ -1070,7 +916,7 @@ span.letter {
     }
 
     .header-nav .nav li:last-child a:after {
-        background: #fff;
+        background: $default-color;
     }
 
     .about {
