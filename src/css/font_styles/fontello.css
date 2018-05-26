@@ -72,6 +72,7 @@
     color: white;
     padding: 7px 7px;
     transition: all 1.5s;
+    text-decoration: none;
 }
 
 .icon-mail-alt:before {
@@ -132,18 +133,18 @@
     margin-top: 10px;
     text-shadow: 0 0 20px #000;
     transition: all .2s linear;
-    animation: scale-sml 2s infinite;
-}
-
-.icon-down-big:hover:before {
-    transform: scale(1.1);
+    animation: scale-sml 1.5s ease infinite;
+    animation-delay: 4s;
 }
 
 @keyframes scale-sml {
     0% {
-        transform: scale(.7);
+        transform: scale(.8);
     }
-    100% {
+    50% {
         transform: scale(1.1);
 
+        100% {
+            transform: scale(.8);
+        }
     }

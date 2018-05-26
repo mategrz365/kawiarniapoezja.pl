@@ -13,3 +13,9 @@
     right: 0;
     margin: 0 auto;
 }
+
+@mixin headers-properties {
+    letter-spacing: 3px;
+    line-height: 130%;
+    text-align: center;
+}

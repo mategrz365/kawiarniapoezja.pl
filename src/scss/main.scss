@@ -1,6 +1,7 @@
 //imports
 @import 'mixins';
 @import 'keyframes';
+@import 'hamburger';
 
 //variables
 $default-color: #FFF;
@@ -73,13 +74,11 @@ body {
     margin: 0 auto;
 }
 
-.header-nav.is-active .nav {
-    padding: 0;
+.is-active .nav {
+
     margin: 0 auto;
     display: block;
     height: calc(100vh - 66px);
-    /*   display: flex;
-    flex-direction: column;*/ //FIX IT!
 }
 
 .header-nav .nav li {
@@ -102,108 +101,8 @@ body {
     font-weight: bold;
 }
 
-.hamburger {
-    position: absolute;
-    top: 11px;
-    right: 10px;
-    padding: 15px 15px;
-    display: inline-block;
-    cursor: pointer;
-    transition-property: opacity, filter;
-    transition-duration: 0.15s;
-    transition-timing-function: linear;
-    font: inherit;
-    color: inherit;
-    text-transform: none;
-    background-color: transparent;
-    border: 0;
-    margin: 0;
-    overflow: visible;
-    &:hover {
-        opacity: 0.7;
-    }
-    &:focus {
-        outline: none;
-    }
-}
-
-
-.hamburger-box {
-    width: 34px;
-    height: 20px;
-    display: inline-block;
-    position: relative;
-}
-
-.hamburger-inner {
-    display: block;
-    top: 50%;
-    margin-top: -2px;
-}
-
-.hamburger-inner,
-.hamburger-inner::before,
-.hamburger-inner::after {
-    width: 35px;
-    height: 4px;
-    background-color: #363636;
-    border-radius: 4px;
-    position: absolute;
-    transition-property: transform;
-    transition-duration: 0.15s;
-    transition-timing-function: ease;
-}
-
-.hamburger-inner::before,
-.hamburger-inner::after {
-    content: "";
-    display: block;
-}
-
-.hamburger-inner::before {
-    top: -10px;
-}
-
-.hamburger-inner::after {
-    bottom: -10px;
-}
-
-.hamburger .hamburger-inner {
-    top: auto;
-    bottom: 0;
-    transition-duration: 0.13s;
-    transition-delay: 0.13s;
-    transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-
-.hamburger .hamburger-inner::after {
-    top: -20px;
-    transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), opacity 0.1s linear;
-}
-
-.hamburger .hamburger-inner::before {
-    transition: top 0.12s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-
-.hamburger.is-active .hamburger-inner {
-    transform: translate3d(0, -10px, 0) rotate(-45deg);
-    transition-delay: 0.22s;
-    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-}
-
-.hamburger.is-active .hamburger-inner::after {
-    top: 0;
-    opacity: 0;
-    transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333), opacity 0.1s 0.22s linear;
-}
-
-.hamburger.is-active .hamburger-inner::before {
-    top: 0;
-    transform: rotate(-90deg);
-    transition: top 0.1s 0.16s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
-}
-
 .banner {
+    //animation-background?
     @include banner-property;
     margin: 0;
     border-left: none;
@@ -211,7 +110,8 @@ body {
     background-position: 70%;
     background-image: url(../img/wesele-sm.jpg);
     position: relative;
-} //animation-background?
+}
+
 .banner-overlay {
     position: absolute;
     top: 0;
@@ -241,6 +141,7 @@ body {
 }
 
 .banner-arrow-down {
+    display: block;
     width: 46px;
     height: 46px;
     border: 5px solid $default-color;
@@ -250,20 +151,12 @@ body {
     bottom: 5%;
     transform: translateX(-50%);
     box-shadow: 0 0 20px #000;
+    animation: changeOpacity 4s linear;
     &:hover {
         cursor: pointer;
         background-color: $gold;
     }
 }
-
-/*.test-effect-animation{
-    animation: test-animation 2s linear forwards;
-}
-
-@keyframes test-animation{
-    0%{transform:rotate(0deg) translateY(0px); opacity:1;  filter: blur();}
-    100%{transform:rotate(45deg) translateY(-200px); opacity:0;  filter: blur(10px);}
-}*/
 
 .art-col {
     margin-top: 20px;
@@ -482,7 +375,7 @@ section.map {
     z-index: 3;
 }
 
-.arrow {
+.arrow-up {
     width: 100px;
     height: 60px;
     background-color: $footer-color;
@@ -497,8 +390,9 @@ section.map {
 
 .animation {
     animation: show 1s forwards;
-} //end footer
-//general
+
+}
+
 p {
     line-height: 35px;
 }
@@ -512,36 +406,26 @@ section {
     color: $gold;
 }
 
-//end general
-//headers h1 - h3
-h1 {
-    font-size: 4rem;
-    text-align: center;
-    color: white;
-    text-shadow: 0 0 20px #000;
-    letter-spacing: 3px;
-}
 
+h1 {
+    @include headers-properties;
+    font-size: 5vh;
+    color: $default-color;
+    text-shadow: 0 0 20px #000, 0 2px 2px #000;
+    margin: 10px;
+}
 
 h2 {
-    text-align: center;
-    font-family: $header-font-stack;
+    @include headers-properties;
     font-size: 2.8rem;
+    font-family: $header-font-stack;
     font-weight: 400;
-    margin: 0;
-    position: relative;
-    display: inline-block;
-    width: 100%;
-    padding: 10px 0;
     color: $gold;
-    letter-spacing: 2.5px;
-    line-height: 120%;
+    margin: 0;
+    padding: 10px 0;
 }
 
-h3 {
-    margin-top: 30px;
-    font-size: 2rem;
-} //end headers
+
 .parallax-module {
     padding: 0;
 }
@@ -555,8 +439,7 @@ h3 {
 }
 
 .parallax-img {
-
-    /*  background-attachment: fixed;*/
+    background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
     width: inherit;
@@ -640,11 +523,6 @@ span.letter {
         &:nth-of-type(3) {
             display: none;
         }
-    }
-
-
-    .header-nav .nav li a {
-        font-size: 0.8em;
     }
 
     .tester {
@@ -882,10 +760,13 @@ span.letter {
         margin-right: 0;
     }
 
+
+
     .header-nav .nav li a {
         display: block;
         position: relative;
         padding-bottom: 5px;
+        font-size: 1.6rem;
     }
 
 
