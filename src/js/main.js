@@ -6,6 +6,23 @@ $(function () {
 else
     $(".page-header").removeClass("add-shadow");*/
 
+
+    // menu show&hide when scrolling
+
+    var $window = $(window);
+    if ($window.width() < 1024) {
+        var prevScrollPos = $window.scrollTop();
+        $window.on('scroll', function () {
+            var currentScrollPos = $window.scrollTop();
+            if (prevScrollPos > currentScrollPos) {
+                $('.page-header').css('top', '0');
+            } else {
+                $('.page-header').css('top', '-65px');
+            }
+            prevScrollPos = currentScrollPos;
+        });
+    }
+
     // menu show&hide
     $(".hamburger").click(function () {
         $(".header-nav").stop(true, true).fadeToggle();
