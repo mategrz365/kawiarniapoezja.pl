@@ -1,5 +1,11 @@
 $(function () {
 
+    // add shadow to menu on scroll down
+    /*if ($(window).scrollTop() > 80)
+    $(".page-header").addClass("add-shadow");
+else
+    $(".page-header").removeClass("add-shadow");*/
+
     // menu show&hide
     $(".hamburger").click(function () {
         $(".header-nav").stop(true, true).fadeToggle();
@@ -13,16 +19,16 @@ $(function () {
     }
 
     // smooth animation, click menu
-    $('.nav a:not(#fb)').click(function (e) {
+    $('.header-nav a:not(#fb)').click(function (e) {
         e.preventDefault();
         scroll($(this.hash).offset().top - 75);
         $(".hamburger").toggleClass("is-active");
         if ($(window).width() < 992)
-            $(".header-nav").slideUp();
+            $(".header-nav").slideUp(500);
     });
 
     // smooth animation, click arrow-down
-    $('.banner-arrow-down').on("click", function () {
+    $('.banner-arrow-down').click(function () {
         scroll($('.about').offset().top - 75);
     });
 
@@ -47,13 +53,8 @@ $(function () {
         scroll($self.position().top - 90);
         $(".btn").removeClass('select');
         $('.menu-rest-module').hide();
-        $('.menu-rest-module[data-index=' + $index + ']').fadeIn(500)
+        $('.menu-rest-module[data-index=' + $index + ']').fadeIn(500);
         $self.addClass('select');
     });
 
-    // add shadow to menu on scroll down
-    if ($(window).scrollTop() > 50)
-        $(".page-header").addClass("ph-shadow");
-    else
-        $(".page-header").removeClass("ph-shadow");
 });

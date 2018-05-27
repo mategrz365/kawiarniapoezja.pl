@@ -39,6 +39,7 @@ body {
 
 .page-header {
     width: 100%;
+    height: 66px;
     background-color: $default-color;
     position: fixed;
     top: 0;
@@ -59,46 +60,46 @@ body {
 }
 
 .logo-img {
+    width: 40px;
+    height: 40px;
     position: absolute;
     top: 10px;
 }
 
 .header-nav {
-    padding: 0 40px;
     display: none;
-}
-
-.header-nav .nav {
+    height: calc(100vh - 65px);
+    background-color: $default-color;
+    margin: 0 auto;
     padding: 0;
-    width: 100%;
-    margin: 0 auto;
+
 }
 
-.is-active .nav {
-
-    margin: 0 auto;
-    display: block;
-    height: calc(100vh - 66px);
-}
-
-.header-nav .nav li {
-    border-bottom: 1px solid rgba(197, 157, 95, 0.85);
-    padding: 20px 0;
+.header-nav > li {
     list-style-type: none;
     text-align: center;
+    padding: 15px 0px;
+    margin: 0 20px;
+    border-bottom: 1px solid rgba(197, 157, 95, 0.85);
+
 }
 
-.header-nav .nav li:last-child {
-    border: 0;
-}
-
-.header-nav .nav li a {
+.header-nav > li > a {
     text-decoration: none;
     color: #555;
     text-transform: uppercase;
-    font-size: 3vh;
+    font-size: 2rem;
     letter-spacing: 1px;
     font-weight: bold;
+}
+
+.header-nav li:last-child {
+    border: 0;
+}
+
+.is-active {
+    display: block;
+
 }
 
 .banner {
@@ -198,7 +199,7 @@ section.map {
 
 .content {
     text-align: center;
-    margin-top: 66px;
+    margin-top: 65px;
 }
 
 .menu-rest {
@@ -409,7 +410,7 @@ section {
 
 h1 {
     @include headers-properties;
-    font-size: 5vh;
+    font-size: 4rem;
     color: $default-color;
     text-shadow: 0 0 20px #000, 0 2px 2px #000;
     margin: 10px;
@@ -491,13 +492,7 @@ span.letter {
         background-position: 50%;
         background-image: url(../img/wesele-xlc.jpg);
     }
-    /*   .border-bottom {
-       bottom: 20%;
-   }
 
-   .border-top {
-       top: 20%;
-   }*/
     .menu-rest-col {
         margin: 0;
         padding: 0 20px;
@@ -505,9 +500,10 @@ span.letter {
 }
 
 @media (max-width: 768px) and (orientation: landscape) {
-    .arrow-down {
+    .banner-arrow-down {
         left: 90%;
-        bottom: 10%;
+        bottom: 5%;
+        transform: scale(0.8);
     }
 }
 
@@ -586,8 +582,6 @@ span.letter {
         margin: 0 20px;
         border: 10px solid $gray;
         padding: 0;
-
-
     }
 
     .info-party {
@@ -627,7 +621,6 @@ span.letter {
     }
 
     .art-col-offer {
-
         margin: 15px;
     }
 
@@ -709,6 +702,7 @@ span.letter {
     }
 }
 
+
 @media (min-width: 1024px) {
 
     .page-header {
@@ -719,20 +713,15 @@ span.letter {
         z-index: 2;
     }
 
-    .ph-shadow {
+    /*.add-shadow {
         box-shadow: 0 0 3px #000;
-    }
-
-    .header-container {
-        margin-left: auto;
-        margin-right: auto;
-        position: relative;
-        .hamburger {
-            display: none;
-        }
+    }*/
+    .hamburger {
+        display: none;
     }
 
     .header-nav {
+        height: auto;
         position: absolute;
         top: 5px;
         right: 20px;
@@ -742,12 +731,11 @@ span.letter {
         padding-right: 5px;
     }
 
-    .header-nav .nav {
+    .header-nav {
         display: block;
-
     }
 
-    .header-nav .nav li {
+    .header-nav li {
         border-bottom: none;
         list-style-type: none;
         display: inline-block;
@@ -756,21 +744,18 @@ span.letter {
         padding: 15px 0;
     }
 
-    .header-nav .nav li:last-child {
+    .header-nav li:last-child {
         margin-right: 0;
     }
 
-
-
-    .header-nav .nav li a {
+    .header-nav li a {
         display: block;
         position: relative;
         padding-bottom: 5px;
         font-size: 1.6rem;
     }
 
-
-    .header-nav .nav li a:after {
+    .header-nav li a:after {
         content: " ";
         position: absolute;
         width: 100%;
@@ -784,19 +769,19 @@ span.letter {
         transition: .5s;
     }
 
-    .header-nav .nav li a:hover {
+    .header-nav li a:hover {
         opacity: 0.8;
     }
 
-    .header-nav .nav li a:hover:after {
+    .header-nav li a:hover:after {
         transform: scaleX(1);
     }
 
-    .header-nav .nav li:last-child a:hover {
+    .header-nav li:last-child a:hover {
         border: none;
     }
 
-    .header-nav .nav li:last-child a:after {
+    .header-nav li:last-child a:after {
         background: $default-color;
     }
 
@@ -831,7 +816,7 @@ span.letter {
     }
 
     h1 {
-        font-size: 5rem;
+        font-size: 6rem;
         letter-spacing: 4px;
         animation: text 4s;
     }
@@ -839,7 +824,9 @@ span.letter {
     h2 {
         font-size: 4.0rem;
     }
+
 }
+
 
 @media (min-width: 1367px) {
     .info-party,
@@ -855,5 +842,11 @@ span.letter {
     .info-catering {
         margin-bottom: 10px;
     }
+}
 
+
+@media(max-height: 375px) {
+    .header-nav > li {
+        padding: 8px 0;
+    }
 }
