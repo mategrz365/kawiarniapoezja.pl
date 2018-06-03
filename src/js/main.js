@@ -1,15 +1,11 @@
 $(function () {
+    
+    var $window = $(window);
 
     // add shadow to menu on scroll down
-    /*if ($(window).scrollTop() > 80)
-    $(".page-header").addClass("add-shadow");
-else
-    $(".page-header").removeClass("add-shadow");*/
-
 
     // menu show&hide when scrolling
-
-    var $window = $(window);
+    
     if ($window.width() < 1024) {
         var prevScrollPos = $window.scrollTop();
         $window.on('scroll', function () {

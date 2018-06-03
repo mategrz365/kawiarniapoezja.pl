@@ -12,8 +12,6 @@ $footer-color: #34313B;
 $default-font-stack: 'Open Sans',
 'Arial',
 sans-serif;
-$logo-font-stack: 'Allura',
-cursive;
 $header-font-stack: 'Old Standard TT',
 serif;
 
@@ -48,30 +46,20 @@ body {
     transition: top .3s;
 }
 
-.logo {
-    font-family: $logo-font-stack;
-    color: #555;
-    font-size: 4.8rem;
-    margin: 0;
-    padding: 21px;
-    a {
-        text-decoration: none;
-        color: inherit;
-    }
-}
-
 .logo-img {
-    width: 40px;
-    height: 40px;
+    width:150px;
+    height: auto;
     position: absolute;
-    top: 10px;
+    top: 0px;
+    left: 10px;
 }
 
 .header-nav {
     display: none;
-    height: calc(100vh - 65px);
+    height: 100vh;
     background-color: $default-color;
     margin: 0 auto;
+    margin-top:66px;
     padding: 0;
 
 }
@@ -79,7 +67,7 @@ body {
 .header-nav > li {
     list-style-type: none;
     text-align: center;
-    padding: 15px 0px;
+    padding: 25px 0px;
     margin: 0 20px;
     border-bottom: 1px solid rgba(197, 157, 95, 0.85);
 
@@ -120,7 +108,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, .15);
+    background-color: rgba(0, 0, 0, .2);
 }
 
 .banner-text {
@@ -173,10 +161,10 @@ body {
     margin-top: 20px;
 }
 
-.tester {
-    background: url(../img/coffee1.jpg);
+.img-caffe {
+    background: url(../img/DSC_0272.JPG);
     height: 400px;
-    background-position: 70%;
+    /*background-position: 70%;*/
     background-size: cover;
 }
 
@@ -408,6 +396,15 @@ section {
     color: $gold;
 }
 
+.separator-quote{
+    display: block;
+    color:$gold;
+   
+    margin-top:20px;
+    margin-bottom: 15px;
+    font-size:80px;
+    font-family: serif;
+}
 
 h1 {
     @include headers-properties;
@@ -446,7 +443,7 @@ h2 {
     background-repeat: no-repeat;
     width: inherit;
     &:nth-of-type(1) {
-        background-image: url(../img/par-img-1.JPG);
+        background-image: url(../img/DSC_0272.JPG);
     }
     &:nth-of-type(2),
     &:nth-of-type(3) {
@@ -500,11 +497,29 @@ span.letter {
     }
 }
 
-@media (max-width: 768px) and (orientation: landscape) {
+@media (max-width: 850px) and (orientation: landscape) {
     .banner-arrow-down {
         left: 90%;
         bottom: 5%;
         transform: scale(0.8);
+    }
+    .content {
+        margin-top: 55px;
+    }
+    .page-header {
+        height: 55px;
+    }
+    
+    .header-nav{
+        margin-top:55px;        
+    }
+     .header-nav > li{
+        padding: 15px 0;        
+    } 
+    
+    .logo-img {
+        width:140px;
+        top: -5px;
     }
 }
 
@@ -514,15 +529,16 @@ span.letter {
         width: 50%;
         &:nth-of-type(2) {
             display: block;
-            background-image: url(../img/par-img-2.jpg);
+            background-image: url(../img/DSC_0263.JPG);
             border-left: 10px solid $gray;
+            background-position: 50% 50%;
         }
         &:nth-of-type(3) {
             display: none;
         }
     }
 
-    .tester {
+    .img-caffe {
         height: 450px;
         margin: 10px;
         background-position: 65%;
@@ -536,11 +552,11 @@ span.letter {
         align-items: center;
     }
 
-    .bsl {
+    .flex-bsl {
         align-items: baseline;
     }
 
-    .str {
+    .flex-str {
         align-items: flex-start;
     }
 
@@ -713,10 +729,7 @@ span.letter {
         background-color: $default-color;
         z-index: 2;
     }
-
-    /*.add-shadow {
-        box-shadow: 0 0 3px #000;
-    }*/
+  
     .hamburger {
         display: none;
     }
@@ -727,13 +740,9 @@ span.letter {
         top: 5px;
         right: 20px;
         background-color: transparent;
-        display: block;
-        padding: 0;
         padding-right: 5px;
-    }
-
-    .header-nav {
         display: block;
+        margin-top:0;
     }
 
     .header-nav li {
@@ -803,8 +812,9 @@ span.letter {
     .parallax-img {
         width: calc(100% / 3);
         &:nth-of-type(3) {
+           
             display: block;
-            background-image: url(../img/par-img-3.jpg);
+            background-image: url(../img/DSC_0282.JPG);
             border-left: 10px solid $gray;
         }
     }
