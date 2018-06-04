@@ -76,5 +76,13 @@ $(function () {
         $('.menu-rest-module[data-index=' + $index + ']').fadeIn(500);
         $self.addClass('select');
     });
+    
+    //scrollReveal
+    
+    window.sr = ScrollReveal({ reset: true, duration: 1500});
+    sr.reveal('.about');
+    sr.reveal('.info-caffe');
+    sr.reveal('.info-party');
+    sr.reveal('.info-catering');
 
 });
