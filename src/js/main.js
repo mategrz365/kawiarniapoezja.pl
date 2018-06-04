@@ -1,8 +1,15 @@
-$(function () {
-    
+$(function () {    
     var $window = $(window);
 
     // add shadow to menu on scroll down
+
+    $window.scroll(function() {   
+        if ($window.scrollTop() > 60) {
+            $(".page-header").addClass("active-shadow");
+        } else {
+            $(".page-header").removeClass("active-shadow");
+        }
+    });
 
     // menu show&hide when scrolling
     

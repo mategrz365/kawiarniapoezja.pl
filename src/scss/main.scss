@@ -9,11 +9,8 @@ $gold: #c59d5f;
 $gray: #eaeaeb;
 $darkgray: #413E4A;
 $footer-color: #34313B;
-$default-font-stack: 'Open Sans',
-'Arial',
-sans-serif;
-$header-font-stack: 'Old Standard TT',
-serif;
+$default-font-stack: 'Open Sans','Arial',sans-serif;
+$header-font-stack: 'Old Standard TT', 'Times New Roman',serif;
 
 //base 
 html {
@@ -44,6 +41,10 @@ body {
     left: 0;
     z-index: 50;
     transition: top .3s;
+}
+
+.active-shadow{
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.4);
 }
 
 .logo-img {
@@ -288,7 +289,7 @@ section.map {
     top: 75px;
 }
 
-.how-to-find {
+.google-maps {
     display: block;
     border: 2px solid $gold;
     background: rgba(197, 157, 95, 0.8);
@@ -498,6 +499,7 @@ span.letter {
 }
 
 @media (max-width: 850px) and (orientation: landscape) {
+    
     .banner-arrow-down {
         left: 90%;
         bottom: 5%;

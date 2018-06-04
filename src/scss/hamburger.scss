@@ -1,4 +1,5 @@
 //https://jonsuh.com/hamburgers/
+
 .hamburger {
     position: absolute;
     top: 11px;
@@ -23,7 +24,6 @@
         outline: none;
     }
 }
-
 
 .hamburger-box {
     width: 34px;
@@ -100,8 +100,7 @@
     transition: top 0.1s 0.16s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
-
-@media (max-width: 768px) and (orientation: landscape) {
+@media (max-width: 850px) and (orientation: landscape) {
     .hamburger {
         top: 5px;
     }
