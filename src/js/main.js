@@ -41,7 +41,7 @@ $(function () {
     // smooth animation, click menu
     $('.header-nav a:not(#fb)').click(function (e) {
         e.preventDefault();
-        scroll($(this.hash).offset().top - 75);
+        scroll($(this.hash).offset().top - 95);
         $(".hamburger").toggleClass("is-active");
         if ($(window).width() < 992)
             $(".header-nav").slideUp(500);

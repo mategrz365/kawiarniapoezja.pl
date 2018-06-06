@@ -47,7 +47,7 @@ body {
     box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.4);
 }
 
-.logo-img {
+.logo-black {
     width:150px;
     height: auto;
     position: absolute;
@@ -264,6 +264,7 @@ main {
 
 .inline {
     display: flex;
+    flex-wrap:wrap;
     align-items: baseline;
 }
 
@@ -320,6 +321,7 @@ main {
     transform: translate(-50%, -50%);
     width: 40px;
     height: 20px;
+    opacity: 0.6;
 }
 
 .pulse:before {
@@ -346,6 +348,7 @@ main {
 }
 
 .contact-module {
+    flex:1;
     margin: 0 10px;
     padding: 0;
     text-align: center;
@@ -353,6 +356,12 @@ main {
         list-style-type: none;
         padding: 5px 0;
     }
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .copyright p {
@@ -484,6 +493,11 @@ span.letter {
     background-color: $gold;
 }
 
+.logo-white{
+    width:250px;
+}
+
+
 @media (min-width: 480px) {
 
 
@@ -519,7 +533,7 @@ span.letter {
         padding: 15px 0;        
     } 
     
-    .logo-img {
+    .logo-black {
         width:140px;
         top: -5px;
     }
