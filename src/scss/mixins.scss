@@ -1,4 +1,5 @@
-@mixin banner-property {
+
+@mixin banner-properties {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -19,3 +20,12 @@
     line-height: 130%;
     text-align: center;
 }
+/*
+
+@setPosition($position, $top, $left, $right) {
+    position: $position;
+    top: $top;
+    left: $left; 
+    right: $right;
+}
+*/

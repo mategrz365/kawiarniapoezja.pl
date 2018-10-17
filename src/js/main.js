@@ -1,31 +1,32 @@
 $(function () {    
     var $window = $(window);
-
     // add shadow to menu on scroll down
 
     $window.scroll(function() {   
-        if ($window.scrollTop() > 60) {
-            $(".page-header").addClass("active-shadow");
-        } else {
-            $(".page-header").removeClass("active-shadow");
-        }
+        $(".page-header").toggleClass("active-shadow", $window.scrollTop() > 60);
     });
 
     // menu show&hide when scrolling
     
-    if ($window.width() < 1024) {
-        var prevScrollPos = $window.scrollTop();
-        $window.on('scroll', function () {
-            var currentScrollPos = $window.scrollTop();
-            if (prevScrollPos > currentScrollPos) {
-                $('.page-header').css('top', '0');
-            } else {
-                $('.page-header').css('top', '-65px');
-            }
-            prevScrollPos = currentScrollPos;
-        });
+    var handleHeaderVisibility = function() {
+        if ($window.width() < 1024) {
+            var prevScrollPos = $window.scrollTop();
+            $window.on('scroll', function () {
+                var currentScrollPos = $window.scrollTop(),
+                    headerHeight = $(".page-header").height();
+                if (prevScrollPos > currentScrollPos) {
+                    $('.page-header').css('top', '0');
+                } else {
+                    $('.page-header').css('top', `-${headerHeight}px`);
+                }
+                prevScrollPos = currentScrollPos;
+            });
+        }
     }
 
+    handleHeaderVisibility();
+    $(window).on('resize', handleHeaderVisibility);
+    
     // menu show&hide
     $(".hamburger").click(function () {
         $(".header-nav").stop(true, true).fadeToggle();
@@ -35,13 +36,13 @@ $(function () {
     var scroll = function (offset) {
         $('html, body').animate({
             scrollTop: offset
-        }, 500);
+        }, 500); //SWING
     }
 
     // smooth animation, click menu
     $('.header-nav a:not(#fb)').click(function (e) {
         e.preventDefault();
-        scroll($(this.hash).offset().top - 95);
+        scroll($(this.hash).offset().top - $(".page-header").height());
         $(".hamburger").toggleClass("is-active");
         if ($(window).width() < 992)
             $(".header-nav").slideUp(500);
@@ -84,5 +85,10 @@ $(function () {
     sr.reveal('.info-caffe');
     sr.reveal('.info-party');
     sr.reveal('.info-catering');
-
+    sr.reveal('.parallax-img', { duration: 2000 });
+    sr.reveal('.jeden', { duration: 1000 });
+    sr.reveal('.dwa', { duration: 1200 });
+    sr.reveal('.trzy', { duration: 1400 });
+    sr.reveal('.cztery', { duration: 1600 });
+    sr.reveal('.piec', { duration: 1800 });
 });

@@ -23,7 +23,7 @@ body {
     padding: 0;
     font-family: $default-font-stack;
     font-size: 1.6rem;
-    line-height: 2.4rem;
+    line-height: 200%;
     color: #555;
 }
 
@@ -89,12 +89,11 @@ body {
 
 .is-active {
     display: block;
-
 }
 
 .banner {
     //animation-background?
-    @include banner-property;
+    @include banner-properties;
     margin: 0;
     border-left: none;
     border-right: none;
@@ -163,19 +162,19 @@ body {
 }
 
 .img-caffe {
-    background: url(../img/DSC_0272.JPG);
+    background: url(../img/lokal_kawiarnia_2_1600px.JPG);
     height: 400px;
     /*background-position: 70%;*/
     background-size: cover;
 }
 
 .first {
-    background: url(../img/_N1N1417.jpg) no-repeat;
+    background: url(../img/lokal_sala_1_1600px.jpg) no-repeat;
     background-position: center;
 }
 
 .second {
-    background: url(../img/_N1N1417.jpg) no-repeat;
+    background: url(../img/potrawy_miesa_1_1600px.jpg) no-repeat;
     background-position: center;
 }
 
@@ -211,8 +210,7 @@ main {
 }
 
 .description {
-    font-size: 2.2rem;
-    line-height: 3rem;
+    font-size: 2.2rem;   
     display: block;
     margin-bottom: 20px;
     color: #555;
@@ -231,8 +229,10 @@ main {
 
 .btn {
     width: 100%;
-    padding: 20px 0;
+    border-radius:10px;
+    padding: 20px;
     margin-bottom: 5px;
+    margin-left: 2px;
     background: rgba(197, 157, 95, 0.5);
     font-size: 2rem;
     letter-spacing: 0.3rem;
@@ -266,6 +266,7 @@ main {
     display: flex;
     flex-wrap:wrap;
     align-items: baseline;
+    line-height: 120%;
 }
 
 .dots {
@@ -393,26 +394,16 @@ main {
 
 }
 
-p {
-    line-height: 35px;
-}
-
 section {
     padding: 20px 30px;
 }
 
-.separator {
-    margin-top: 0;
-    color: $gold;
-}
-
-.separator-quote{
-    display: block;
+.separator-quote{   
     color:$gold;
-   
+    text-align: center;
     margin-top:20px;
     margin-bottom: 15px;
-    font-size:80px;
+    font-size:60px;
     font-family: serif;
 }
 
@@ -434,7 +425,6 @@ h2 {
     padding: 10px 0;
 }
 
-
 .parallax-module {
     padding: 0;
 }
@@ -448,12 +438,12 @@ h2 {
 }
 
 .parallax-img {
-    background-attachment: fixed;
+   
     background-size: cover;
     background-repeat: no-repeat;
-    width: inherit;
     &:nth-of-type(1) {
-        background-image: url(../img/DSC_0272.JPG);
+        background-image: url(../img/potrawy_lody_1_1600px.JPG);
+        background-position: 30%; 
     }
     &:nth-of-type(2),
     &:nth-of-type(3) {
@@ -504,6 +494,7 @@ span.letter {
     .banner {
         background-position: 50%;
         background-image: url(../img/wesele-xlc.jpg);
+        
     }
 
     .menu-rest-col {
@@ -545,7 +536,8 @@ span.letter {
         width: 50%;
         &:nth-of-type(2) {
             display: block;
-            background-image: url(../img/DSC_0263.JPG);
+            background-image: url(../img/potrawy_pizza_1_1600px.JPG);
+            
             border-left: 10px solid $gray;
             background-position: 50% 50%;
         }
@@ -641,7 +633,6 @@ span.letter {
         padding-top: 0;
         padding-bottom: 10px;
         text-align: left;
-
     }
 
     .art-col-offer {
@@ -676,8 +667,7 @@ span.letter {
 
     h2 {
         font-size: 3.2rem;
-        padding: 0;
-        line-height: 120%;
+        padding: 0;  
     }
 
     section {
@@ -685,7 +675,7 @@ span.letter {
     }
 
     .par {
-        line-height: 35px;
+    
         padding: 10px 40px;
     }
 
@@ -712,9 +702,10 @@ span.letter {
         align-items: center;
     }
     .banner {
-        @include banner-property;
-        background-position: 50%;
-        background-image: url(../img/wesele-xlc.jpg);
+        @include banner-properties;
+        background-position: 60% 0%;
+        //background-image: url(../img/wesele-xlc.jpg);
+         background-image: url(../img/lokal_sala_2_1600px.jpg);
     }
 
     .menu-select {
@@ -727,7 +718,7 @@ span.letter {
         display: flex;
         justify-content: center;
         align-items: center;
-        border-right: 1px solid $gold;
+        border: 1px solid $gold;
         position: relative;
         &:last-of-type {
             border: none;
@@ -735,10 +726,9 @@ span.letter {
     }
 }
 
-
 @media (min-width: 1024px) {
 
-    .page-header {
+    .page-header {     
         position: fixed;
         top: 0;
         transition: opacity 0.3s ease-in-out;
@@ -751,7 +741,7 @@ span.letter {
     }
 
     .header-nav {
-        height: auto;
+        height: auto;        
         position: absolute;
         top: 5px;
         right: 20px;
@@ -816,22 +806,21 @@ span.letter {
         margin-bottom: 20px;
     }
 
-    .par {
-        line-height: 35px;
+    .par {       
         padding: 10px 80px;
     }
 
-    .separator {
-        margin-bottom: 35px;
-    }
+  .separator-quote{
+        font-size:80px;
+   }
 
     .parallax-img {
-        width: calc(100% / 3);
+        width: 33.333%;
         &:nth-of-type(3) {
-           
-            display: block;
-            background-image: url(../img/DSC_0282.JPG);
+          display: block;
+            background-image: url(../img/potrawy_taco_1_1600px.JPG);
             border-left: 10px solid $gray;
+            background-position: 50%;
         }
     }
 
