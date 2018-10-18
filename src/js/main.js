@@ -1,13 +1,12 @@
 $(function () {    
     var $window = $(window);
+    
     // add shadow to menu on scroll down
-
     $window.scroll(function() {   
         $(".page-header").toggleClass("active-shadow", $window.scrollTop() > 60);
     });
 
-    // menu show&hide when scrolling
-    
+    // menu show&hide when scrolling    
     var handleHeaderVisibility = function() {
         if ($window.width() < 1024) {
             var prevScrollPos = $window.scrollTop();
@@ -30,7 +29,8 @@ $(function () {
     // menu show&hide
     $(".hamburger").click(function () {
         $(".header-nav").stop(true, true).fadeToggle();
-        $(".header-nav, .hamburger").toggleClass("is-active");
+        //$(".header-nav, .hamburger").toggleClass("is-active");
+        $(".hamburger, header-nav").toggleClass("is-active");      
     });
 
     var scroll = function (offset) {
@@ -45,7 +45,7 @@ $(function () {
         scroll($(this.hash).offset().top - $(".page-header").height());
         $(".hamburger").toggleClass("is-active");
         if ($(window).width() < 992)
-            $(".header-nav").slideUp(500);
+            $(".header-nav").slideUp(300);           
     });
 
     // smooth animation, click arrow-down
