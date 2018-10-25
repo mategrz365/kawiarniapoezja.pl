@@ -65,6 +65,12 @@
       "css": "down-big",
       "code": 59398,
       "src": "fontawesome"
+    },
+    {
+      "uid": "30b79160618d99ce798e4bd11cafe3fe",
+      "css": "food",
+      "code": 61685,
+      "src": "fontawesome"
     }
   ]
 }

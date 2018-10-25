@@ -11,6 +11,7 @@ $darkgray: #413E4A;
 $footer-color: #34313B;
 $default-font-stack: 'Open Sans','Arial',sans-serif;
 $header-font-stack: 'Old Standard TT', 'Times New Roman',serif;
+$menu-height:66px;    
 
 //base 
 html {
@@ -34,7 +35,7 @@ body {
 
 .page-header {
     width: 100%;
-    height: 66px;
+    height: $menu-height;
     background-color: $default-color;
     position: fixed;
     top: 0;
@@ -59,18 +60,15 @@ body {
     display: none;
     height: 100vh;
     background-color: $default-color;
-    margin: 0 auto;
-    margin-top:66px;
+    margin-top:$menu-height;
     padding: 0;
-
-}
+  }
 
 .header-nav > li {
     list-style-type: none;
-    text-align: center;
-    //padding: 25px 0px;
+    text-align: center;   
     margin: 0 20px;
-    border-bottom: 1px solid rgba(197, 157, 95, 0.85);
+    //border-bottom: 1px solid rgba(197, 157, 95, 0.85);
 
 }
 
@@ -88,15 +86,13 @@ body {
 }
 
 .is-active {
-    display: block;  
-}
-
-/*.is-act {    
-    display: flex;
+    display: flex;  
     flex-direction: column;
     justify-content: space-around;
-    height: calc(100vh - 55px);   
-}*/
+    height: calc(100vh - 66px);
+    align-items: center;
+}
+
 
 .banner {    
     @include banner-properties;
@@ -195,6 +191,8 @@ main {
     margin-top: 65px;
 }
 
+
+
 .menu-rest {
     background-image: url(../img/circles-and-roundabouts.png.png);
     border-bottom: 10px solid $gray;
@@ -225,10 +223,18 @@ main {
 }
 
 .menu-select {
-    display: flex;
-    flex-flow: column;
-    margin: 20px 10px;
-    padding: 0;
+    display: none;   
+}
+
+.menu-select-mobile{
+    display:none;
+    border-radius: 50%;
+    border: 5px solid $gold; 
+    background-color:white;
+    position: fixed;
+    padding: 2em;
+    right: 3%;
+    bottom: 3%;    
 }
 
 .btn {
@@ -244,7 +250,7 @@ main {
     font-weight: bold;
     cursor: pointer;
     list-style: none;
-    text-shadow: 0 0 1px #000;
+    text-shadow: 1px 2px 3px #353535;    
     &:hover {
         background-color: $gold;
     }
@@ -265,6 +271,12 @@ main {
 .description {
     font-weight: bold;
     letter-spacing: 1.5px;
+    
+}
+
+.menu-rest-item,
+.prizes{
+   color:$gold; 
 }
 
 .inline {
@@ -309,11 +321,13 @@ main {
     &:hover {
         transform: scale(1.1);
         border-radius: 15px;
+        background: $gold;
 
     }
     a {
         text-decoration: none;
         color: $default-color;
+        text-shadow: 1px 2px 3px #353535;
     }
 }
 
@@ -434,7 +448,7 @@ h2 {
 
 .parallax-images-container {
     display: flex;
-    height: 450px;
+    height: 470px;
     width: 100%;
     border-bottom: 10px solid $gray;
     border-top: 10px solid $gray;
@@ -442,11 +456,10 @@ h2 {
 
 .parallax-img {   
     background-size: cover;
-    background-repeat: no-repeat;
-    &:nth-of-type(1) {
-        background-image: url(../img/potrawy_lody_1_1600px.JPG);
-        background-position: 0% 10%; 
-    }
+    background-repeat: no-repeat;  
+    width:100%;        
+    background-image: url(../img/potrawy_lody_1_1600px.JPG);
+    
     &:nth-of-type(2),
     &:nth-of-type(3) {
         display: none;
@@ -474,6 +487,7 @@ span.letter {
     font-size: 3.8rem;
     font-weight: 700;
     font-family: 'Old Standard TT', serif;
+    color:$gold;
 }
 
 .menu-rest-module {
@@ -508,24 +522,6 @@ span.letter {
         left: 90%;
         bottom: 5%;
         transform: scale(0.8);
-    }
-    main {
-        margin-top: 55px;
-    }
-    .page-header {
-        height: 55px;
-    }
-    
-    .header-nav{
-        margin-top:55px;        
-    }
-    > li{
-        padding: 8px 0;       
-    } 
-    
-    .logo-black {
-        width:140px;
-        top: -5px;
     }
 }
 
@@ -701,9 +697,15 @@ span.letter {
     }
     
     .menu-select {
+        display: flex;
         flex-direction: row;
         height: 90px;
     }
+    
+    .menu-select-mobile{
+        display:none;
+    }
+    
 
     .btn {
         display: flex;
@@ -711,10 +713,7 @@ span.letter {
         align-items: center;
         border: 1px solid $gold;
         position: relative;
-        &:last-of-type {
-            border: none;
         }
-    }
 }
 
 @media (min-width: 1024px) {
@@ -740,6 +739,7 @@ span.letter {
         padding-right: 5px;
         display: block;
         margin-top:0;
+        
     }
 
     .header-nav li {
@@ -850,9 +850,4 @@ span.letter {
                 margin-bottom: 10px;
             }
         }
-
-            @media(max-height: 375px) {
-                .header-nav > li {
-                    padding: 8px 0;
-                }
-            }
+ 

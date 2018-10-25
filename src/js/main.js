@@ -5,6 +5,21 @@ $(function () {
     $window.scroll(function() {   
         $(".page-header").toggleClass("active-shadow", $window.scrollTop() > 60);
     });
+    
+      $window.scroll(function() { 
+          let bottom_pos = $(".menu-rest").offset().top + $(".menu-rest").outerHeight(true)-750;        
+        if($window.scrollTop() > $(".menu-rest").offset().top &&
+          ($window.scrollTop() < bottom_pos)) {
+     
+            $('.menu-select-mobile').css("display","block");
+        }else{
+                $('.menu-select-mobile').css("display","none");
+        }
+              
+      });  
+      
+      
+//DEBAUCING
 
     // menu show&hide when scrolling    
     var handleHeaderVisibility = function() {
@@ -28,9 +43,9 @@ $(function () {
     
     // menu show&hide
     $(".hamburger").click(function () {
-        $(".header-nav").stop(true, true).fadeToggle();
-        //$(".header-nav, .hamburger").toggleClass("is-active");
-        $(".hamburger, header-nav").toggleClass("is-active");      
+        //$(".header-nav").stop(true, true).fadeToggle();       
+        $(".hamburger").toggleClass("is-changed");      
+        $(".header-nav").toggleClass("is-active");      
     });
 
     var scroll = function (offset) {
@@ -43,9 +58,9 @@ $(function () {
     $('.header-nav a:not(#fb)').click(function (e) {
         e.preventDefault();
         scroll($(this.hash).offset().top - $(".page-header").height());
-        $(".hamburger").toggleClass("is-active");
+        $(".hamburger").toggleClass("is-changed");
         if ($(window).width() < 992)
-            $(".header-nav").slideUp(300);           
+            $(".header-nav").toggleClass("is-active");           
     });
 
     // smooth animation, click arrow-down
@@ -81,14 +96,8 @@ $(function () {
     //scrollReveal
     
     window.sr = ScrollReveal({ reset: true, duration: 1500});
-    sr.reveal('.about');
-    sr.reveal('.info-caffe');
-    sr.reveal('.info-party');
-    sr.reveal('.info-catering');
-    sr.reveal('.parallax-img', { duration: 2000 });
-    sr.reveal('.jeden', { duration: 1000 });
-    sr.reveal('.dwa', { duration: 1200 });
-    sr.reveal('.trzy', { duration: 1400 });
-    sr.reveal('.cztery', { duration: 1600 });
-    sr.reveal('.piec', { duration: 1800 });
-});
+    sr.reveal('.about, .btn, .info-caffe, .info-party, .info-catering');
+    sr.reveal('.parallax-img:first-of-type, .parallax-img:last-of-type',{scale:0.9, duration:2000});
+    sr.reveal('.parallax-img');
+    });
+ 
