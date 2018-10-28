@@ -6,6 +6,8 @@ $(function () {
         $(".page-header").toggleClass("active-shadow", $window.scrollTop() > 60);
     });
     
+    //show restaurant menu on mobile
+    
       $window.scroll(function() { 
           let bottom_pos = $(".menu-rest").offset().top + $(".menu-rest").outerHeight(true)-750;        
         if($window.scrollTop() > $(".menu-rest").offset().top &&
@@ -20,6 +22,12 @@ $(function () {
       
       
 //DEBAUCING
+    
+    //click restaurant menu on mobile
+    
+    $('.menu-select-mobile').on('click', function(){
+        $('.menu-select').addClass('act')
+    });
 
     // menu show&hide when scrolling    
     var handleHeaderVisibility = function() {
@@ -83,20 +91,38 @@ $(function () {
     });
 
     // menu-restaurant
+    if($window.width() > 768){
     $(".btn").click(function () {
         var $index = $(this).data('index');
         var $self = $(this);
-        scroll($self.position().top - 90);
+        scroll($self.position().top - $(".page-header").height());
         $(".btn").removeClass('select');
         $('.menu-rest-module').hide();
         $('.menu-rest-module[data-index=' + $index + ']').fadeIn(500);
         $self.addClass('select');
-    });
+    
+    });}
+    
+    //funkcja zmieniająca menu restauracji
+    //funkcja zmieniająca pozycję.
+    
+      // menu-restaurant mobile
+    if($window.width() < 768){
+    $(".btn").click(function () {
+        var $index = $(this).data('index');
+        
+        scroll($('.menu-rest').position().top-90);
+        $(".btn").removeClass('select');
+        $('.menu-rest-module').hide();
+        $('.menu-rest-module[data-index=' + $index + ']').fadeIn(500);
+      
+         $('.menu-select').removeClass('act');
+    });}
     
     //scrollReveal
     
     window.sr = ScrollReveal({ reset: true, duration: 1500});
-    sr.reveal('.about, .btn, .info-caffe, .info-party, .info-catering');
+    sr.reveal('.about, .info-caffe, .info-party, .info-catering'); //.btn
     sr.reveal('.parallax-img:first-of-type, .parallax-img:last-of-type',{scale:0.9, duration:2000});
     sr.reveal('.parallax-img');
     });
