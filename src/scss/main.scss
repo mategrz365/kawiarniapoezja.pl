@@ -1,9 +1,7 @@
-//imports
 @import 'mixins';
 @import 'keyframes';
 @import 'hamburger';
 
-//variables
 $default-color: #FFF;
 $gold: #c59d5f;
 $gray: #eaeaeb;
@@ -13,7 +11,6 @@ $default-font-stack: 'Open Sans','Arial',sans-serif;
 $header-font-stack: 'Old Standard TT', 'Times New Roman',serif;
 $menu-height:66px;    
 
-//base 
 html {
     font-size: 62.5%;
 }
@@ -30,7 +27,7 @@ body {
 
 html,
 body {
-    overflow-x: hidden; //to fix
+    overflow-x: hidden;
 }
 
 .page-header {
@@ -48,7 +45,7 @@ body {
     box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.4);
 }
 
-.logo-black {
+.logo-dark {
     width:150px;
     height: auto;
     position: absolute;
@@ -106,15 +103,13 @@ body {
     border: 0;
 }
 
-
-
 .banner {    
     @include banner-properties;
     margin: 0;
     border-left: none;
     border-right: none;
     background-position: right;
-    background-image: url(../img/lokal_sala_sm.jpg);
+    background-image: url(../img/sala_sm.jpg);
     position: relative;
 }
 
@@ -156,7 +151,7 @@ body {
     left: 50%;
     bottom: 5%;
     transform: translateX(-50%);
-    box-shadow: 0 0 20px #000;
+    box-shadow: 0 0 20px #555;
     animation: changeOpacity 4s linear;
     &:hover {
         cursor: pointer;
@@ -164,8 +159,8 @@ body {
     }
 }
 
- .info-caffe,
-    .info-party,
+.info-caffe,
+.info-party,
 .info-catering{
         padding: 20px 0px;
     }
@@ -176,8 +171,7 @@ body {
 }
 
 .img-col-offer {
-    height: 450px;
-    width: 100%;
+    height: 400px;    
 }
 
 .art-col-offer {
@@ -185,18 +179,17 @@ body {
 }
 
 .img-caffe {
-    background: url(../img/lokal_kawiarnia_800px.JPG);
-      
+    background: url(../img/kawiarnia.JPG);      
     height: 400px;    
     background-size: cover;
 }
 
 .first {
-    background: url(../img/lokal_sala_1_800px.jpg) no-repeat center;    
+    background: url(../img/sala_1.jpg) no-repeat center;    
 }
 
 .second {
-    background: url(../img/potrawy_miesa_800px.jpg) no-repeat center;   
+    background: url(../img/miesa.jpg) no-repeat center;   
 }
 
 .img {
@@ -212,8 +205,6 @@ main {
     margin-top: 65px;
 }
 
-
-
 .menu-rest {
     background-image: url(../img/circles-and-roundabouts.png.png);
     border-bottom: 10px solid $gray;
@@ -225,7 +216,6 @@ main {
 .menu-rest-module {
     display: none;
     min-height: 660px;
-    /*to fix*/
 }
 
 .menu-rest-module.active {
@@ -265,21 +255,20 @@ main {
   opacity: 1;  
 }
 
-
- .menu-select > li{
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     height: calc(100vh / 4);
-    list-style: none;
-    color: #555;
-    text-transform: uppercase;
-    font-size: 2rem;
-    letter-spacing: 1px;
-    font-weight: bold;
-    width: calc(100vw - 80px);
-     margin: 0 40px;
-    border-bottom: 1px solid #c59d5f80;
+.menu-select > li{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh / 4);
+  list-style: none;
+  color: #555;
+  text-transform: uppercase;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  font-weight: bold;
+  width: calc(100vw - 80px);
+  margin: 0 40px;
+  border-bottom: 1px solid #c59d5f80;
     &li:last-of-type{
         border:none;
     }
@@ -294,7 +283,7 @@ main {
     cursor: pointer;
     right: 3%;
     bottom: 3%;    
-    box-shadow: 0 0 15px #000;
+    box-shadow: 0 0 15px #555;        
 }
 
 .close-btn{
@@ -303,33 +292,13 @@ main {
     bottom: 4.2%;
     z-index: 60;
     transition:.5s;
-    opacity: 0;
-  
+    opacity: 0;  
 }
 
 .is-visible{
     right:3%;
     opacity: 1;   
 }
-
-/*.btn {
-    width: 100%;
-    border-radius:10px;
-    padding: 20px;
-    margin-bottom: 5px;
-    margin-left: 2px;
-    background: rgba(197, 157, 95, 0.5);
-    font-size: 2rem;
-    letter-spacing: 0.3rem;
-    color: $default-color;
-    font-weight: bold;
-    cursor: pointer;
-    list-style: none;
-    text-shadow: 1px 2px 3px #353535;    
-    &:hover {
-        background-color: $gold;
-    }
-}*/
 
 .menu-rest-col {
     margin: 0;
@@ -345,8 +314,7 @@ main {
 .prizes,
 .description {
     font-weight: bold;
-    letter-spacing: 1.5px;
-    
+    letter-spacing: 1.5px;    
 }
 
 .menu-rest-item,
@@ -399,10 +367,11 @@ main {
         background: $gold;
 
     }
-    a {
-        text-decoration: none;
-        color: $default-color;
-        text-shadow: 1px 2px 3px #353535;
+    
+a {
+    text-decoration: none;
+    color: $default-color;
+    text-shadow: 1px 2px 3px #353535;
     }
 }
 
@@ -525,11 +494,11 @@ h2 {
       font-size: 2.2rem;
 }
 
-.parallax-module {
+.imgs-module {
     padding: 0;
 }
 
-.parallax-images-container {
+.imgs-container {
     display: flex;
     height: 470px;
     width: 100%;
@@ -537,24 +506,22 @@ h2 {
     border-top: 10px solid $gray;
 }
 
-.parallax-img {   
+.img-arr {   
     background-size: cover;
     background-repeat: no-repeat;  
     width:100%;        
-    background-image: url(../img/potrawy_lody_1_1600px.JPG);
-    
+    background-image: url(../img/lody.JPG);   
     &:nth-of-type(2),
     &:nth-of-type(3) {
         display: none;
     }
 }
 
-.parallax-image {
-    background: url(../img/lokal_sala_3.jpg);
+.img-fixed {
+    background: url(../img/sala_2_sm.jpg);
     background-attachment: fixed;
     background-size: cover;
-    background-position: 50%;
-        
+    background-position: 50%;        
     background-repeat: no-repeat;
     height: 450px;
     width: 100%;
@@ -579,7 +546,7 @@ span.letter {
     display: none;
 }
 
-.logo-white{
+.logo-light{
     width:250px;
 }
 
@@ -587,7 +554,7 @@ span.letter {
 
     .banner {
         background-position: 50%;
-        background-image: url(../img/lokal_sala_md.jpg);
+        background-image: url(../img/sala_md.jpg);
     
     }
 
@@ -597,386 +564,399 @@ span.letter {
     }
 
 
-.sm{
-      font-size: 2.8rem;
-}
+    .sm{
+          font-size: 2.8rem;
+    }
 }
 
 @media (max-width: 850px) and (orientation: landscape) {
     
-    .banner-arrow-down {
-        left: 90%;
-        bottom: 5%;
-        transform: scale(0.8);
-    }
+            .banner-arrow-down {
+                left: 90%;
+                bottom: 5%;
+                transform: scale(0.8);
+                }
 }
 
 @media (min-width: 768px) {
 
-    .parallax-img {
-        width: 50%;
-        &:nth-of-type(2) {
-            display: block;
-            background-image: url(../img/potrawy_pizza_800px.JPG);
-            
-            border-left: 10px solid $gray;
-            background-position: 50% 50%;
-        }
-        &:nth-of-type(3) {
-            display: none;
-        }
-    }
+                .img-arr {
+                    width: 50%;
+                    &:nth-of-type(2) {
+                        display: block;
+                        background-image: url(../img/pizza.JPG); 
+                        border-left: 10px solid $gray;
+                        background-position: 50% 50%;
+                    }
+                    &:nth-of-type(3) {
+                        display: none;
+                    }
+                }
+          
+                .img-caffe {
+                    height: 450px;
+                    margin: 10px;
+                    background-position: 65%;
+                }
+
+                .flex-container {
+                    display: flex;
+                    max-width: 1300px;
+                    justify-content: center;
+                    margin: 0 auto;
+                    align-items: center;
+                }
+
+                .flex-bsl {
+                    align-items: baseline;
+                }
+
+                .flex-str {
+                    align-items: flex-start;
+                }
+
+                .menu-rest {
+                    border: 10px solid $gray;
+                    margin: 10px 20px;
+                }
+                .addbreak {
+                    margin-top: 60px;
+                }
+
+                .menu-rest-col {
+                    width: 46%
+                }
+
+                .about {
+                    margin: 0px 20px;
+                }
+
+                .about-column {
+                    width: 50%;
+                    text-align: left;
+                }
+
+                .border-left {
+                    border-left: 1px solid rgba(197, 157, 95, 0.4);
+                }
+
+                .info-caffe {
+                    padding: 55px 20px;
+                }
+
+                .menu-rest {
+                    padding: 0;
+                }
+
+                .info-party,
+                .info-catering {
+                    margin: 0 20px;
+                    border: 10px solid $gray;
+                    padding: 0;
+                }
+
+                .info-party {
+                    margin-top: 10px;
+                }
+
+                .info-catering {
+                    border-top: none;
+                    margin-bottom: 10px;
+                }
+
+                .img-col {
+                    width: 40%;
+                    border: 10px solid $gray;
+                }
+
+                .art-col {
+                    width: 45%;
+                    margin-top: 0;
+                }
+
+                .art-col-p {
+                    padding: 60px;
+                    padding-top: 0;
+                    padding-bottom: 10px;
+                    text-align: left;
+                }
+
+                .art-col-offer {
+                    width: 50%;
+                    margin: 0;
+                }
+                .img-col-offer {
+                    width: 50%;
+                    margin: 10px;
+                }
+
+                .art-col-offer {
+                    margin: 15px;
+                }
+
+                .img-col-offer {
+                    height: 500px;
+                    background-size: cover;
+                    overflow: hidden;
+                }
+
+                .contact-module.border {
+                    border-left: 1px solid #c59d5f80;
+                    border-right: 1px solid #c59d5f80;
+                    padding: 10px 20px;
+                }
     
-    .select {
-    background-color: $gold;
-}
+                .img-fixed {
+                    background: url(../img/sala_2_md.jpg);
+                    background-attachment: fixed;
+                    background-size: cover;
+                    background-position: 50%;        
+                    background-repeat: no-repeat;
+                }
 
-    .img-caffe {
-        height: 450px;
-        margin: 10px;
-        background-position: 65%;
-    }
+                .banner-line {
+                    width: 400px;
+                }
 
-    .flex-container {
-        display: flex;
-        max-width: 1300px;
-        justify-content: center;
-        margin: 0 auto;
-        align-items: center;
-    }
+                h2 {
+                    font-size: 3.2rem;
+                    padding: 0;  
+                }
 
-    .flex-bsl {
-        align-items: baseline;
-    }
+                section {
+                    padding: 20px 30px;
+                }
 
-    .flex-str {
-        align-items: flex-start;
-    }
+                .par {
 
-    .menu-rest {
-        border: 10px solid $gray;
-        margin: 10px 20px;
-    }
-    .addbreak {
-        margin-top: 60px;
-    }
-
-    .menu-rest-col {
-        width: 46%
-    }
-
-    .about {
-        margin: 0px 20px;
-    }
-
-    .about-column {
-        width: 50%;
-        text-align: left;
-    }
-
-    .border-left {
-        border-left: 1px solid rgba(197, 157, 95, 0.4);
-    }
+                    padding: 10px 40px;
+                }
 
 
-    .info-caffe {
-        padding: 55px 20px;
-    }
+                .about-p-left {
+                    padding-right: 60px;
+                }
 
-    .menu-rest {
-        padding: 0;
-    }
+                .about-p-right {
+                    padding-left: 60px;
+                }
 
-    .info-party,
-    .info-catering {
-        margin: 0 20px;
-        border: 10px solid $gray;
-        padding: 0;
-    }
+                .contact-info {
+                    padding: 0;
+                }
 
-    .info-party {
-        margin-top: 10px;
-    }
+                .contact-container {
+                    max-width: 1260px;
+                    width: 100%;
+                    margin: 0 auto;
+                    padding: 60px 0;
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                }
 
-    .info-catering {
-        border-top: none;
-        margin-bottom: 10px;
-    }
+                .menu-select {
+                    display: flex;
+                    flex-direction: row;
+                    width:auto;
+                    height: 90px;
+                    padding: 0 10px;
+                    opacity: 1;
+                    position: static;
+                    background: transparent;
+                    margin: 20px 0;
+                }
 
-    .img-col {
-        width: 40%;
-        border: 10px solid $gray;
-    }
+                .menu-select > li {
+                    height:auto;
+                    margin:0 4px;;
+                    color: $default-color;
+                    padding: 20px 0;
+                }
 
-    .art-col {
-        width: 45%;
-        margin-top: 0;
-    }
+                .menu-select-mobile{
+                    display:none;
+                }
 
-    .art-col-p {
-        padding: 60px;
-        padding-top: 0;
-        padding-bottom: 10px;
-        text-align: left;
-    }
-
-    .art-col-offer {
-        width: 50%;
-        margin: 0;
-    }
-    .img-col-offer {
-        width: 50%;
-        margin: 10px;
-    }
-
-    .art-col-offer {
-        margin: 15px;
-    }
-
-    .img-col-offer {
-        height: 500px;
-        background-size: cover;
-        overflow: hidden;
-    }
-
-    .contact-module.border {
-        border-left: 1px solid #c59d5f80;
-        border-right: 1px solid #c59d5f80;
-        padding: 10px 20px;
-    }
-
-    .banner-line {
-        width: 400px;
-    }
-
-    h2 {
-        font-size: 3.2rem;
-        padding: 0;  
-    }
-
-    section {
-        padding: 20px 30px;
-    }
-
-    .par {
+                .btn {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border: 1px solid $gold;
+                    position: relative;
+                    width: 100%;
+                    border-radius:10px;
+                    padding: 20px;
+                    margin-bottom: 5px;
+                    margin-left: 2px;
+                    background: rgba(197, 157, 95, 0.5);
+                    font-size: 2rem;
+                    letter-spacing: 0.3rem;
+                    color: $default-color;
+                    font-weight: bold;
+                    cursor: pointer;
+                    list-style: none;
+                    text-shadow: 1px 2px 3px #353535; 
+                    box-shadow: 0 0 5px #555;
+                     &:hover {
+                    background-color: $gold;
+                    }
+                    }
     
-        padding: 10px 40px;
-    }
-
-
-    .about-p-left {
-        padding-right: 60px;
-    }
-
-    .about-p-right {
-        padding-left: 60px;
-    }
-
-    .contact-info {
-        padding: 0;
-    }
-
-    .contact-container {
-        max-width: 1260px;
-        width: 100%;
-        margin: 0 auto;
-        padding: 60px 0;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-    }
-    
-    .menu-select {
-        display: flex;
-        flex-direction: row;
-        width:auto;
-        height: 90px;
-        padding: 0 10px;
-        opacity: 1;
-        position: static;
-        background: transparent;
-        margin: 20px 0;
-    }
-    
-    .menu-select > li {
-        height:auto;
-        margin:0 2px;;
-        color: $default-color;
-        padding: 20px 0;
-        
-    }
-    
-    .menu-select-mobile{
-        display:none;
-    }
-    
-
-
-    .btn {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: 1px solid $gold;
-        position: relative;
-        width: 100%;
-        border-radius:10px;
-        padding: 20px;
-        margin-bottom: 5px;
-        margin-left: 2px;
-        background: rgba(197, 157, 95, 0.5);
-        font-size: 2rem;
-        letter-spacing: 0.3rem;
-        color: $default-color;
-        font-weight: bold;
-        cursor: pointer;
-        list-style: none;
-        text-shadow: 1px 2px 3px #353535; 
-         &:hover {
-        background-color: $gold;
-    }
-        }
+                  btn select {
+                                background-color: $gold;
+                            }
 }
 
 @media (min-width: 1024px) {
 
-    .page-header {     
-        position: fixed;
-        top: 0;
-        transition: opacity 0.3s ease-in-out;
-        background-color: $default-color;
-        z-index: 2;
-    }
-  
-    .hamburger {
-        display: none;
-    }
+                    .page-header {     
+                        position: fixed;
+                        top: 0;
+                        transition: opacity 0.3s ease-in-out;
+                        background-color: $default-color;
+                        z-index: 2;
+                    }
 
-    .header-nav {           
-        position: absolute;
-       
-        top: 5px;
-        right: 20px;
-        background-color: transparent;
-        padding-right: 5px;
-        display: inline-block;
-        margin-top:0;
-        left:auto;
-        height:auto;
-        width:auto;   
-        opacity: 1;
-    }
+                    .hamburger {
+                        display: none;
+                    }
 
-    .header-nav li {
-        border-bottom: none;   
-        display: inline-block;        
-        margin: 0 15px;
-        padding: 13px 0;
-        height: auto;
-        width: auto;
-    }
+                    .header-nav {           
+                        position: absolute;
+                        top: 5px;
+                        right: 20px;
+                        background-color: transparent;
+                        padding-right: 5px;
+                        display: inline-block;
+                        margin-top:0;
+                        left:auto;
+                        height:auto;
+                        width:auto;   
+                        opacity: 1;
+                    }
 
-    .header-nav li:last-child {
-        margin-right: 0;
-    }
+                    .header-nav li {
+                        border-bottom: none;   
+                        display: inline-block;        
+                        margin: 0 15px;
+                        padding: 13px 0;
+                        height: auto;
+                        width: auto;
+                    }
 
-    .header-nav li a {
-        display: block;
-        position: relative;       
-        font-size: 1.6rem;
-    }
+                    .header-nav li:last-child {
+                        margin-right: 0;
+                    }
 
-    .header-nav li a:after {
-        content: " ";
-        position: absolute;
-        width: 100%;
-        height: 2px;
-        bottom: 0;
-        left: 0;
-        background: $gold;
-        z-index: -1;
-        transform: scaleX(0);
-        transform-origin: left;
-        transition: .5s;
-    }
+                    .header-nav li a {
+                        display: block;
+                        position: relative;       
+                        font-size: 1.6rem;
+                    }
 
-    .header-nav li a:hover {
-        opacity: 0.8;
-    }
+                    .header-nav li a:after {
+                        content: " ";
+                        position: absolute;
+                        width: 100%;
+                        height: 2px;
+                        bottom: 0;
+                        left: 0;
+                        background: $gold;
+                        z-index: -1;
+                        transform: scaleX(0);
+                        transform-origin: left;
+                        transition: .5s;
+                    }
 
-    .header-nav li a:hover:after {
-        transform: scaleX(1);
-    }
+                    .header-nav li a:hover {
+                        opacity: 0.8;
+                    }
 
-    .header-nav li:last-child a:hover {
-        border: none;
-    }
+                    .header-nav li a:hover:after {
+                        transform: scaleX(1);
+                    }
 
-    .header-nav li:last-child a:after {
-        background: $default-color;
-    }
+                    .header-nav li:last-child a:hover {
+                        border: none;
+                    }
 
-    .about {
-        padding: 80px 160px;
-        margin-bottom: 20px;
-    }
+                    .header-nav li:last-child a:after {
+                        background: $default-color;
+                    }
+
+                    .about {
+                        padding: 80px 160px;
+                        margin-bottom: 20px;
+                    }
+
+                    .par {       
+                        padding: 10px 80px;
+                    }
+
+                    .separator-quote{
+                            font-size:80px;
+                    }
+
+                    .img-arr {
+                        width: 33.333%;
+                        &:nth-of-type(3) {
+                          display: block;
+                            background-image: url(../img/taco.JPG);
+                            border-left: 10px solid $gray;
+                            background-position: 50%;
+                        }
+                    }
+
+                     .banner {         
+                        background-image: url(../img/sala_xl.jpg);
+                        background-position: 60% 0%;  
+                    }
     
-    .par {       
-        padding: 10px 80px;
-    }
+                    .img-fixed {
+                        background: url(../img/sala_2_xl.jpg);
+                        background-attachment: fixed;
+                        background-size: cover;
+                        background-position: 50%;        
+                        background-repeat: no-repeat;
+                    }
 
-  .separator-quote{
-        font-size:80px;
-   }
+                    .art-col-offer {
+                        width: 45%;
+                    }
+                    .img-col-offer {
+                        width: 55%;
+                    }
 
-    .parallax-img {
-        width: 33.333%;
-        &:nth-of-type(3) {
-          display: block;
-            background-image: url(../img/potrawy_taco_800px.JPG);
-            border-left: 10px solid $gray;
-            background-position: 50%;
-        }
-    }
+                    h1 {
+                        font-size: 6rem;
+                        letter-spacing: 4px;
+                        animation: text 4s;
+                    }
+
+                    h2 
+                     {
+                        font-size: 4.0rem;           
+                    }
+                    .sm{
+                        font-size: 4.0rem;     
+                    }
+                }
+
+@media (min-width: 1367px) {
     
-     .banner {         
-        background-image: url(../img/lokal_sala_xl.jpg);
-        background-position: 60% 0%;  
-    }
+                        .info-party,
+                        .info-catering {
+                            margin: 0px auto;
+                            max-width: 1306px;
+                        }
 
-    .art-col-offer {
-        width: 45%;
-    }
-    .img-col-offer {
-        width: 55%;
-    }
+                        .info-party {
+                            margin-top: 10px;
+                        }
 
-    h1 {
-        font-size: 6rem;
-        letter-spacing: 4px;
-        animation: text 4s;
-    }
-
-    h2 
-     {
-        font-size: 4.0rem;           
-    }
-    .sm{
-        font-size: 4.0rem;     
-    }
+                        .info-catering {
+                            margin-bottom: 10px;
+                        }
 }
-        @media (min-width: 1367px) {
-            .info-party,
-            .info-catering {
-                margin: 0px auto;
-                max-width: 1306px;
-            }
-
-            .info-party {
-                margin-top: 10px;
-            }
-
-            .info-catering {
-                margin-bottom: 10px;
-            }
-        }
  
