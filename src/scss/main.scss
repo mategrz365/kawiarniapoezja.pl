@@ -294,6 +294,7 @@ main {
     cursor: pointer;
     right: 3%;
     bottom: 3%;    
+    box-shadow: 0 0 15px #000;
 }
 
 .close-btn{
@@ -303,11 +304,12 @@ main {
     z-index: 60;
     transition:.5s;
     opacity: 0;
+  
 }
 
 .is-visible{
     right:3%;
-    opacity: 1;
+    opacity: 1;   
 }
 
 /*.btn {
@@ -787,8 +789,21 @@ span.letter {
     .menu-select {
         display: flex;
         flex-direction: row;
+        width:auto;
         height: 90px;
         padding: 0 10px;
+        opacity: 1;
+        position: static;
+        background: transparent;
+        margin: 20px 0;
+    }
+    
+    .menu-select > li {
+        height:auto;
+        margin:0 2px;;
+        color: $default-color;
+        padding: 20px 0;
+        
     }
     
     .menu-select-mobile{
@@ -838,14 +853,17 @@ span.letter {
 
     .header-nav {           
         position: absolute;
-        height:auto;
+       
         top: 5px;
         right: 20px;
         background-color: transparent;
         padding-right: 5px;
-        display: block;
+        display: inline-block;
         margin-top:0;
-        
+        left:auto;
+        height:auto;
+        width:auto;   
+        opacity: 1;
     }
 
     .header-nav li {
@@ -853,6 +871,8 @@ span.letter {
         display: inline-block;        
         margin: 0 15px;
         padding: 13px 0;
+        height: auto;
+        width: auto;
     }
 
     .header-nav li:last-child {
