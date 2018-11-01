@@ -17,8 +17,8 @@ $(function () {
     
         $window.scroll(function() { 
             if ($window.width() < 768){
-              var bottomPos = $(".menu-rest").offset().top + $(".menu-rest").outerHeight(true)-750;        
-                if($window.scrollTop() > $(".menu-rest").offset().top 
+              var bottomPos = $(".menu-rest").offset().top + $(".menu-rest").outerHeight(true)-$(window).height();        
+                if($window.scrollTop() > $(".menu-rest").offset().top - $headerHeight
                    &&($window.scrollTop() < bottomPos)) {
                      $('.menu-select-mobile').css("display","block");
                 }else{
