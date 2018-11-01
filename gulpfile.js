@@ -81,7 +81,7 @@ gulp.task('clean', function () {
 })
 
 gulp.task('build', function () {
-    runSequence('clean', ['minify-html', 'minify-css', 'minify-js', 'minify-img'])
+    runSequence('clean', ['minify-html', 'minify-css'/*, 'minify-js'*/, 'minify-img'])
 })
 
 gulp.task('default', ['serve']);

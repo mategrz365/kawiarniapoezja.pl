@@ -139,6 +139,8 @@
 
 .icon-food:before { content: '\f0f5'; color: #c59d5f;  font-size: 30px; margin:10px;animation: scale-sml 1.5s ease infinite;}
 
+.icon-cancel:before { content: '\e807'; color: #c59d5f;  font-size: 40px; } 
+
 @keyframes scale-sml {
     0% {
         transform: scale(.8);
