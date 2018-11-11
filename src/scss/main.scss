@@ -496,25 +496,64 @@ h2 {
 
 .imgs-module {
     padding: 0;
+    position: relative;
+    display: block;
 }
 
-.imgs-container {
+/*.imgs-container {
     display: flex;
     height: 470px;
     width: 100%;
     border-bottom: 10px solid $gray;
     border-top: 10px solid $gray;
+}*/
+
+.img-arr, .img-container{
+    display: none;
 }
 
-.img-arr {   
+/*.img-arr {   
     background-size: cover;
     background-repeat: no-repeat;  
     width:100%;        
-    background-image: url(../img/lody.JPG);   
+    background-image: url(../img/img1.JPG);   
     &:nth-of-type(2),
     &:nth-of-type(3) {
         display: none;
     }
+}*/
+
+.slider{    
+    height: 470px;
+    width: 100%;
+    border-bottom: 10px solid $gray;
+    border-top: 10px solid $gray;
+    background-image: url(../img/img1.jpg); 
+    background-size: cover;
+    background-repeat: no-repeat; 
+    background-position: 50% 0%;
+   
+}
+
+.pagination{
+    position: absolute;
+    bottom:4%;    
+    display: flex;
+    justify-content: center;
+    width:100%;
+}
+
+.dot{
+    width: 15px;
+    height: 15px;
+    border: 3px solid $gold;
+    border-radius: 50%; 
+    margin:5px;
+    transition: 1s;
+}
+
+.checked{  
+    background: $gold;
 }
 
 .img-fixed {
@@ -557,7 +596,7 @@ span.letter {
         background-image: url(../img/sala_md.jpg);
     
     }
-
+    
     .menu-rest-col {
         margin: 0;
         padding: 0 20px;
@@ -579,12 +618,31 @@ span.letter {
 }
 
 @media (min-width: 768px) {
+    
+    
+                .slider{
+                       display:none;
+                }
+
+                .imgs-container {
+                    display: flex;
+                    height: 470px;
+                    width: 100%;
+                    border-bottom: 10px solid $gray;
+                    border-top: 10px solid $gray;
+                }
 
                 .img-arr {
                     width: 50%;
+                    background-size: cover;
+                    background-repeat: no-repeat; 
+                    &:nth-of-type(1) {
+                       display: block;
+                       background-image: url(../img/img1.jpg);
+                    }
                     &:nth-of-type(2) {
                         display: block;
-                        background-image: url(../img/pizza.JPG); 
+                        background-image: url(../img/img2.jpg); 
                         border-left: 10px solid $gray;
                         background-position: 50% 50%;
                     }
@@ -720,7 +778,7 @@ span.letter {
                     padding: 20px 30px;
                 }
 
-                .offer-desc, catering-desc{
+                .offer-desc, .catering-desc{
 
                     padding: 10px 40px;
                 }
@@ -895,7 +953,7 @@ span.letter {
                         width: 33.333%;
                         &:nth-of-type(3) {
                           display: block;
-                            background-image: url(../img/taco.JPG);
+                            background-image: url(../img/img3.JPG);
                             border-left: 10px solid $gray;
                             background-position: 50%;
                         }

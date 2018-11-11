@@ -1,5 +1,7 @@
   const $window = $(window);
   const $headerHeight = $(".page-header").height();  
+  const $mobileWidth = 768;
+  let ind = 1;
 
   function scrollPage(offset) {
         $('html, body').animate({
@@ -12,7 +14,7 @@
   };
     
   function showBtnMenuRest_mobile() {
-            if ($window.width() < 768){
+            if ($window.width() < $mobileWidth){
               var bottomPos = $(".menu-rest").offset().top + $(".menu-rest").outerHeight(true)-$(window).height();        
                 if($window.scrollTop() > $(".menu-rest").offset().top - $headerHeight
                    &&($window.scrollTop() < bottomPos)) {
@@ -25,7 +27,7 @@
     
   function showArrowUp() {
         let $arrow = $(".arrow-up");
-        if ($(window).scrollTop() + $(window).height() >= $(document).height())
+        if ($(window).scrollTop() + $(window).height() >= $(document).height()-100)
             $arrow.addClass("animation");
         else
             $arrow.removeClass("animation");
@@ -34,7 +36,7 @@
   function changeMenuCard(){
             let $index = $(this).data('index');
             let $self = $(this);            
-                    if($window.width() < 768){  
+                    if($window.width() < $mobileWidth){  
                          $('.close-btn').removeClass('is-visible');
                          scrollPage($('.menu-rest').position().top-$headerHeight);
                          selectCard();
@@ -98,6 +100,19 @@
     function scrollTop(){
          scrollPage(0);
     }
+ 
+
+    function slider(){    
+       $('.slider').animate({opacity: 0}, 'slow', function() {
+        $(this)
+            .css({'background-image': `url(../img/img${ind}.jpg)`})
+            .animate({opacity: 1});
+           $('.dot').removeClass('checked');
+           $(`.dot[data-ind=${ind}]`).addClass('checked')
+    });
+        ind++;
+        if(ind>3){ind = 1;};
+    }
 
         $(function () { 
             $window.on('scroll', showBtnMenuRest_mobile);           
@@ -112,7 +127,7 @@
             handleHeaderVisibility();
             $(window).on('resize', handleHeaderVisibility);
             $('.menu-select-mobile').click(showMenuRest_mobile);
-
+            if($window.width() < $mobileWidth){setInterval(slider, 4000);}
             window.sr = ScrollReveal({ reset: true, duration: 1500});
             sr.reveal('.about, .info-cafe, .info-party, .info-catering'); 
             sr.reveal('.img-arr:first-of-type, .img-arr:last-of-type',{scale:0.9, duration:2000});

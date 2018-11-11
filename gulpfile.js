@@ -69,11 +69,7 @@ gulp.task('minify-img', function () {
 
 gulp.task('minify-html', function () {
     return gulp.src('src/*.html')
-        /* .pipe(htmlreplace({
-               'css': 'css/main.css',
-               'js': 'js/main.js'
-               }))*/
-        .pipe(htmlMin({
+             .pipe(htmlMin({
             sortAttributes: true,
             sortClassName: true,
             collapseWhitespace: true,
