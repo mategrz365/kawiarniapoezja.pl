@@ -159,36 +159,36 @@ body {
     }
 }
 
-.info-caffe,
+.info-cafe,
 .info-party,
 .info-catering{
         padding: 20px 0px;
     }
 
-.art-col, .art-col-offer {
+.cafe-col, .offer-col {
     margin-top: 20px;
     padding: 0 20px;
 }
 
-.img-col-offer {
+.offer-img-col {
     height: 400px;    
 }
 
-.art-col-offer {
+.offer-col {
     margin-top: 20px;
 }
 
-.img-caffe {
+.img-cafe {
     background: url(../img/kawiarnia.JPG);      
     height: 400px;    
     background-size: cover;
 }
 
-.first {
+.dining-room-photo {
     background: url(../img/sala_1.jpg) no-repeat center;    
 }
 
-.second {
+.meat-photo {
     background: url(../img/miesa.jpg) no-repeat center;   
 }
 
@@ -206,7 +206,7 @@ main {
 }
 
 .menu-rest {
-    background-image: url(../img/circles-and-roundabouts.png.png);
+    background-image: url(../img/circles.png);
     border-bottom: 10px solid $gray;
     border-top: 10px solid $gray;
     margin: 0;
@@ -438,7 +438,7 @@ a {
     z-index: 3;
 }
 
-.par{
+.offer-desc, catering-desc{
     padding: 20px 0;
 }
 
@@ -593,7 +593,7 @@ span.letter {
                     }
                 }
           
-                .img-caffe {
+                .img-cafe {
                     height: 450px;
                     margin: 10px;
                     background-position: 65%;
@@ -631,7 +631,7 @@ span.letter {
                     margin: 0px 20px;
                 }
 
-                .about-column {
+                .about-col {
                     width: 50%;
                     text-align: left;
                 }
@@ -640,7 +640,7 @@ span.letter {
                     border-left: 1px solid rgba(197, 157, 95, 0.4);
                 }
 
-                .info-caffe {
+                .info-cafe {
                     padding: 55px 20px;
                 }
 
@@ -664,37 +664,30 @@ span.letter {
                     margin-bottom: 10px;
                 }
 
-                .img-col {
+                .cafe-img-col {
                     width: 40%;
                     border: 10px solid $gray;
                 }
 
-                .art-col {
+                .cafe-col {
                     width: 45%;
                     margin-top: 0;
                 }
 
-                .art-col-p {
+                .cafe-desc-col {
                     padding: 60px;
                     padding-top: 0;
                     padding-bottom: 10px;
                     text-align: left;
                 }
 
-                .art-col-offer {
-                    width: 50%;
-                    margin: 0;
-                }
-                .img-col-offer {
-                    width: 50%;
-                    margin: 10px;
-                }
-
-                .art-col-offer {
+                .offer-col {
+                    width: 50%;                  
                     margin: 15px;
                 }
-
-                .img-col-offer {
+                .offer-img-col {
+                    width: 50%;
+                    margin: 10px;
                     height: 500px;
                     background-size: cover;
                     overflow: hidden;
@@ -727,17 +720,17 @@ span.letter {
                     padding: 20px 30px;
                 }
 
-                .par {
+                .offer-desc, catering-desc{
 
                     padding: 10px 40px;
                 }
 
 
-                .about-p-left {
+                .about-desc-left {
                     padding-right: 60px;
                 }
 
-                .about-p-right {
+                .about-desc-right {
                     padding-left: 60px;
                 }
 
@@ -803,7 +796,7 @@ span.letter {
                     }
                     }
     
-                  btn select {
+                  .select {
                                 background-color: $gold;
                             }
 }
@@ -890,7 +883,7 @@ span.letter {
                         margin-bottom: 20px;
                     }
 
-                    .par {       
+                    .offer-desc, catering-desc {       
                         padding: 10px 80px;
                     }
 
@@ -921,10 +914,10 @@ span.letter {
                         background-repeat: no-repeat;
                     }
 
-                    .art-col-offer {
+                    .offer-col {
                         width: 45%;
                     }
-                    .img-col-offer {
+                    .offer-img-col {
                         width: 55%;
                     }
 

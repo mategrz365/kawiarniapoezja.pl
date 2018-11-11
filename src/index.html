@@ -7,12 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Poezja - restauracja, kawiarnia i dom przyjęć - Jastrzębie Zdrój - desery, ciasta, przepyszna kawa, lody, pizza - wesela, przyjęcia, uroczystości, imprezy okolicznościowe, dom weselny, Sylwester 2010 / 2011, zabawa sylwestrowa, zabawa karnawałowa, wieczorki taneczne, dancingi, andrzejki</title>
     <meta name="keywords" content="Dom przyjęć i kawiarnia 'Poezja' - lekka nutka rozkosznej słodyczy - aromat i smak świeżo parzonej kawy, ciasta i desery przygotowywane  z najświeższych i naturalnych produktów - dom przyjęć, dom weselny, wesela, sylwester 2010/2011, pizzeria, pizza, zabawa sylwestrowa, zabawa karnawałowa, karnawał, wieczorki taneczne, dancingi">
-    <meta name="format-detection" content="telephone=no">    <!--Edge-->
+    <meta name="format-detection" content="telephone=no">   
     <meta name="theme-color" content="#FFF"/>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=latin-ext" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT&amp;subset=latin-ext" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
     <link href="css/font_styles/fontello.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.2/css/swiper.min.css">
     <link rel="icon" href="img/fav.ico">
 </head>
 
@@ -28,7 +29,7 @@
             <nav>
                 <ul class="header-nav">
                     <li><a href="#about">O Nas</a></li>
-                    <li><a href="#caffe">Kawiarnia</a></li>
+                    <li><a href="#cafe">Kawiarnia</a></li>
                     <li><a href="#party">Imprezy okolicznościowe</a></li>
                     <li><a href="#catering">Catering</a></li>
                     <li><a href="#contact">Kontakt</a></li>
@@ -53,11 +54,11 @@
                 <h2>ZAPRASZAMY DO NAS</h2>                
                 <div class="separator-quote">&rdquo;</div>
                 <div class="flex-container flex-bsl">
-                    <div class="about-column">
-                        <p class="about-p-left"><span class="letter">P</span>oezja to wyjątkowe miejsce, gdzie można spędzić czas w spokojnej atmosferze w naszej kawiarni lub zorganizować każdy rodzaj uroczystości korzystając z naszej dużej sali bankietowej. Zorganizujemy dla Państwa przyjęcia weselne, komunijne, chrzciny, jubileusze, spotkania biznesowe. </p>
+                    <div class="about-col">
+                        <p class="about-desc-left"><span class="letter">P</span>oezja to wyjątkowe miejsce, gdzie można spędzić czas w spokojnej atmosferze w naszej kawiarni lub zorganizować każdy rodzaj uroczystości korzystając z naszej dużej sali bankietowej. Zorganizujemy dla Państwa przyjęcia weselne, komunijne, chrzciny, jubileusze, spotkania biznesowe. </p>
                     </div>
-                    <div class="about-column border-left">
-                        <p class="about-p-right"> <span class="letter">C</span>iekawy i nowoczesny wystrój wraz ze smacznym jedzeniem, tworzą wyjątkowy klimat w naszym lokalu. Służymy radą przy organizacji uroczystości i gwarantujemy Państwu najwyższą jakość świadczonych usług wraz z profesjonalną obsługą. Nasz lokal znajduje się w dogodnej lokalizacji, nieopodal jastrzębskiej aglomeracji.</p>
+                    <div class="about-col border-left">
+                        <p class="about-desc-right"> <span class="letter">C</span>iekawy i nowoczesny wystrój wraz ze smacznym jedzeniem, tworzą wyjątkowy klimat w naszym lokalu. Służymy radą przy organizacji uroczystości i gwarantujemy Państwu najwyższą jakość świadczonych usług wraz z profesjonalną obsługą. Nasz lokal znajduje się w dogodnej lokalizacji, nieopodal jastrzębskiej aglomeracji.</p>
                     </div>
                 </div>
             </section>
@@ -70,15 +71,15 @@
                 </div>
             </section>
 
-            <section id="caffe" class="info-caffe">
+            <section id="cafe" class="info-cafe">
                 <div class="flex-container">
-                    <div class="img-col">
-                        <div class="img-caffe"></div>
+                    <div class="cafe-img-col">
+                        <div class="img-cafe"></div>
                     </div>
-                    <div class="art-col">
+                    <div class="cafe-col">
                         <h2>KAWIARNIA</h2>                     
                         <div class="separator-quote">&rdquo;</div>
-                        <p class="art-col-p">W naszej kawiarni unosi się aromat świeżo parzonej kawy. Do filiżanki ulubionego naparu możesz wybrać coś słodkiego spośród szerokiej oferty naszych ciast oraz deserów. Menu naszej kawiarni zostało skomponowane w taki sposób, aby każdy mógł znaleźć coś dla siebie. Pizza, sałatki, naleśniki, taco frytki czy panierowany ser to tylko niektóre z propozycji, które znajdziesz u Nas. </p>
+                        <p class="cafe-desc-col">W naszej kawiarni unosi się aromat świeżo parzonej kawy. Do filiżanki ulubionego naparu możesz wybrać coś słodkiego spośród szerokiej oferty naszych ciast oraz deserów. Menu naszej kawiarni zostało skomponowane w taki sposób, aby każdy mógł znaleźć coś dla siebie. Pizza, sałatki, naleśniki, taco frytki czy panierowany ser to tylko niektóre z propozycji, które znajdziesz u Nas. <!--alkohol i menu sezonowe--></p>
                         <i class="icon-signal"></i>
                         <i class="icon-credit-card"></i>
                         <h4>Możliwość dowozu do domu!</h4>
@@ -87,13 +88,12 @@
                 </div>
             </section>
 
-            <section class="menu-rest">
-          
+            <section class="menu-rest">          
                 <ul class="menu-select">
                     <li class="btn select" data-index=0>PIZZA</li>
                     <li class="btn" data-index=1>SZYBKIE DANIA</li>
                     <li class="btn" data-index=2>DESERY</li>
-                    <li class="btn" data-index=3>NAPOJE</li>                    
+                    <li class="btn" data-index=3>NAPOJE</li>   
                 </ul>  
                 <div class="close-btn"><i class="icon-cancel"></i></div>          
                 <div class="menu-rest-modules">
@@ -368,7 +368,7 @@
                                     <div class="inline"><span class="menu-rest-item">Biały Puch</span>
                                         <span class="dots"></span>
                                         <span class="prizes">16 PLN</span></div>
-                                    <div class="menu-rest-ingr">3 gałki lodów o smaku: bakaliowym, adwokatowym, kokosowym, bita śmietana, bakalie, sos adwokatowy
+                                    <div class="menu-rest-ingr">3 gałki lodów o smaku: bakaliowym, czekoladowym, kokosowym, bita śmietana, bakalie, sos adwokatowy
                                     </div>
                                 </li>
                                 <li>
@@ -376,20 +376,20 @@
                                         <span class="dots"></span>
                                         <span class="prizes">16 PLN</span></div>
                                     <div class="menu-rest-ingr">3 gałki lodów o smaku: waniliowym, bakaliwoym, śmietankowo-czekoladowym, chałwa waniliowa, bita śmietana, sos toffi
-                                    </div>                                                
+                                    </div>             
                                 </li>
                                  <li>
                                     <div class="inline"><span class="menu-rest-item">Adwokatka</span>
                                         <span class="dots"></span>
-                                        <span class="prizes">16 PLN</span></div>
+                                        <span class="prizes">18 PLN</span></div>
                                     <div class="menu-rest-ingr">3 gałki lodów o smaku śmietankowym, bita śmietana, sos czekoladowy, likier adwokatowy
                                     </div>                        
                                 </li>
                                         <li>
                                     <div class="inline"><span class="menu-rest-item">Orzechowa arkadia</span>
                                         <span class="dots"></span>
-                                        <span class="prizes">16 PLN</span></div>
-                                    <div class="menu-rest-ingr">3 gałki lodów o smaku masła orzechowego, bita śmietana, sos toffi
+                                        <span class="prizes">18 PLN</span></div>
+                                    <div class="menu-rest-ingr">3 gałki lodów o smaku orzechowym, waniliowym, słonego karmelu, bita śmietana, sos toffi
                                     </div>                        
                                 </li>
                                 <li>
@@ -423,14 +423,7 @@
                                     <div class="menu-rest-ingr">Mus z kiwi z dodatkiem bitej śmietany oraz sorbetem cytrynowym
                                     </div>
                                 </li>
-                                 <li>
-                                    <div class="inline"><span class="menu-rest-item">Malinowa nuta</span>
-                                        <span class="dots"></span>
-                                        <span class="prizes">10 PLN</span></div>
-                                    <div class="menu-rest-ingr">Mus z kiwi z dodatkiem bitej śmietany oraz sorbetem cytrynowym
-                                    </div>
-                                </li>
-                                 <li>
+                                <li>
                                     <div class="inline"><span class="menu-rest-item">Deser Jogurtowy</span>
                                         <span class="dots"></span>
                                         <span class="prizes">10 PLN</span></div>
@@ -438,10 +431,10 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="inline"><span class="menu-rest-item">Kolorowy Rożek</span>
+                                    <div class="inline"><span class="menu-rest-item">Zwierzak</span>
                                         <span class="dots"></span>
-                                        <span class="prizes">7 PLN</span></div>
-                                    <div class="menu-rest-ingr">2 gałki lodów w waflowym różku</div>
+                                        <span class="prizes">9 PLN</span></div>
+                                    <div class="menu-rest-ingr">2 gałki lodów, bita śmietana, lentilki</div>
                                 </li>
                                      <li class="description">Desery na ciepło</li>
                                 <li>
@@ -470,18 +463,18 @@
                                  <li>
                                     <div class="inline"><span class="menu-rest-item">Z bitą śmietaną</span>
                                         <span class="dots"></span>
-                                        <span class="prizes">4,50 PLN</span></div>
+                                        <span class="prizes">5 PLN</span></div>
                                 </li>
                                 <li>
                                     <div class="inline"><span class="menu-rest-item">Z bitą śmietaną i dodatkami czekoladowymi</span>
                                         <span class="dots"></span>
-                                        <span class="prizes">5 PLN</span></div>
+                                        <span class="prizes">5,50 PLN</span></div>
                                 </li>      
                                     <li>
                                     <div class="inline"><span class="menu-rest-item">Z bitą śmietaną i owocami</span>
                                         <span class="dots"></span>
-                                        <span class="prizes">6 PLN</span></div>
-                                </li>                                             
+                                        <span class="prizes">6,50 PLN</span></div>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -493,7 +486,7 @@
                                 <li>
                                     <div class="inline"><span class="menu-rest-item">Espresso</span>
                                         <span class="dots"></span>
-                                        <span class="prizes">4 PLN</span></div>
+                                        <span class="prizes">5 PLN</span></div>
                                 </li>
                                 <li>
                                     <div class="inline"><span class="menu-rest-item">Espresso doppio</span>
@@ -628,36 +621,32 @@
                         </div>
                     </div>
                 </div>
-                <div class="menu-select-mobile"><i class="icon-food"></i></div>
-             
+                <div class="menu-select-mobile"><i class="icon-food"></i></div>             
             </section>
-            
-            
-     
 
             <div class="img-fixed"></div>
 
             <section class="info-party" id="party">
                 <div class="flex-container">
-                    <div class="art-col-offer">
-                        <h2 class ='sm'>IMPREZY OKOLICZNOŚCIOWE</h2>                      
+                    <div class="offer-col">
+                        <h2 class ='sm'>IMPREZY OKOLICZNOŚCIOWE</h2>                  
                         <div class="separator-quote">&rdquo;</div>
-                        <p class="par">Dysponujemy dużą salą bankietową, gdzie organizujemy wszelkiego rodzaju imprezy okolicznościowe od wesela, urodzin, komunii, chrzcin, bankietu, po szkolenia dla firm. Nasza sala pozwala pomieścić do 100 osób. W przypadku małej ilości osób jest możliwość zorganizowania przyjęcia w naszej kawiarni. Prosimy o kontakt lub zapraszamy do Nas na spotkanie, aby omówić szczegóły Państwa przyjęcia.
+                        <p class="offer-desc">Dysponujemy dużą salą bankietową, gdzie organizujemy wszelkiego rodzaju imprezy okolicznościowe od wesela, urodzin, komunii, chrzcin, bankietu, po szkolenia dla firm. Nasza sala pozwala pomieścić do 100 osób. W przypadku małej ilości osób jest możliwość zorganizowania przyjęcia w naszej kawiarni. Prosimy o kontakt lub zapraszamy do Nas na spotkanie, aby omówić szczegóły Państwa przyjęcia.
                         </p>                      
                     </div>
-                    <div class="img-col-offer first">                      
+                    <div class="offer-img-col dining-room-photo">                      
                     </div>
                 </div>
             </section>
 
             <section class="info-catering" id="catering">
                 <div class="flex-container">
-                    <div class="img-col-offer second">
+                    <div class="offer-img-col meat-photo">
                     </div>
-                    <div class="art-col-offer">
+                    <div class="offer-col">
                         <h2>CATERING</h2>                       
                         <div class="separator-quote">&rdquo;</div>
-                        <p class="par">Dla Gości którzy chcą spróbować naszej kuchni w gronie swoich bliskich lub organizują imprezę okolicznościową, przyjęcie, bankiet zapraszamy do skorzystania z naszej oferty lub ustalenia dań do przygotowania przez naszych kucharzy. Istnieje możliwość dostarczenia do domu.
+                        <p class="catering-desc">Dla Gości którzy chcą spróbować naszej kuchni w gronie swoich bliskich lub organizują imprezę okolicznościową, przyjęcie, bankiet zapraszamy do skorzystania z naszej oferty lub ustalenia dań do przygotowania przez naszych kucharzy. Istnieje możliwość dostarczenia do domu.
                     </div>
                 </div>
             </section>
@@ -698,11 +687,10 @@
         <div class="copyright">
             <p> &copy; 2017 Poezja - Kawiarnia <span>&amp;</span> Dom przyjęć</p>
         </div>
-    </footer>
-    
+    </footer>    
     <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.2/js/swiper.min.js"></script>
     <script src="js/main.js"></script>
 </body>
-
 </html>

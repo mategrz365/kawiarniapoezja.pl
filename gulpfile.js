@@ -4,7 +4,7 @@ var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
 var cleanCSS = require('gulp-clean-css');
-var uglify = require('gulp-uglify');
+var uglify = require('gulp-uglify-es').default;
 /*var concat = require('gulp-concat');*/
 var imageMin = require('gulp-imagemin');
 var changed = require('gulp-changed');
@@ -12,6 +12,7 @@ var htmlreplace = require('gulp-html-replace');
 var htmlMin = require('gulp-htmlmin');
 var del = require('del');
 var runSequence = require('run-sequence');
+var pump = require('pump');
 
 gulp.task('reload', function () {
     browserSync.reload();
@@ -44,10 +45,14 @@ gulp.task('minify-css', function () {
         .pipe(gulp.dest('dist/css'))
 })
 
-gulp.task('minify-js', function () {
-    return gulp.src('src/js/**/*.js')
-        .pipe(uglify())
-        .pipe(gulp.dest('dist/js'))
+gulp.task('minify-js', function (cb) {
+    pump([
+         gulp.src('src/js/**/*.js'),
+         uglify(),
+         gulp.dest('dist/js')
+        ],
+        cb
+         );
 })
 
 gulp.task('fonts', function () {
@@ -81,7 +86,7 @@ gulp.task('clean', function () {
 })
 
 gulp.task('build', function () {
-    runSequence('clean', ['minify-html', 'minify-css'/*, 'minify-js'*/, 'minify-img'])
+    runSequence('clean', ['minify-html', 'minify-css', 'minify-js', 'minify-img'])
 })
 
 gulp.task('default', ['serve']);
