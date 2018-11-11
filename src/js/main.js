@@ -1,7 +1,7 @@
   const $window = $(window);
   const $headerHeight = $(".page-header").height();  
   const $mobileWidth = 768;
-  let ind = 1;
+  let $ind = 1;
 
   function scrollPage(offset) {
         $('html, body').animate({
@@ -35,7 +35,7 @@
 
   function changeMenuCard(){
             let $index = $(this).data('index');
-            let $self = $(this);            
+            let $self = $(this);         
                     if($window.width() < $mobileWidth){  
                          $('.close-btn').removeClass('is-visible');
                          scrollPage($('.menu-rest').position().top-$headerHeight);
@@ -73,7 +73,7 @@
                 if (prevScrollPos > currentScrollPos) {
                     $('.page-header').css('top', '0');
                 } else {
-                    $('.page-header').css('top', `-${$headerHeight}px`);
+                    $('.page-header').css('top', -$headerHeight+'px');
                 }
                 prevScrollPos = currentScrollPos;
             });
@@ -105,13 +105,12 @@
     function slider(){    
        $('.slider').animate({opacity: 0}, 'slow', function() {
         $(this)
-            .css({'background-image': `url(./img/img_${ind}.jpg)`})
+            .css({'background-image': 'url(./img/img_'+ $ind +'.jpg)'})
             .animate({opacity: 1});
            $('.dot').removeClass('checked');
-           $(`.dot[data-ind=${ind}]`).addClass('checked')
-    });
-        ind++;
-        if(ind>3){ind = 1;};
+           $('.dot[data-ind='+$ind+']').addClass('checked');
+    });       
+         $ind<3? $ind++:$ind = 1;
     }
 
         $(function () { 
@@ -120,10 +119,10 @@
             $window.on('scroll', showArrowUp);  
             $('.header-nav a:not(#fb)').click(scrollToHash);
             $('.banner-arrow-down').click(scrollDown);
-            $(".icon-up-big").click(scrollTop); 
-            $(".btn").click(changeMenuCard); 
+            $('.icon-up-big').click(scrollTop); 
+            $('.btn').click(changeMenuCard); 
             $('.close-btn').click(hideCloseBtn); 
-            $(".hamburger").click(toggleHamburger);  
+            $('.hamburger').click(toggleHamburger);  
             handleHeaderVisibility();
             $(window).on('resize', handleHeaderVisibility);
             $('.menu-select-mobile').click(showMenuRest_mobile);

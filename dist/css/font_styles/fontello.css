@@ -1,39 +1,26 @@
 @font-face {
-    font-family: 'fontello';
-    src: url('../../font/fontello.eot?76452146');
-    src: url('../../font/fontello.eot?76452146#iefix') format('embedded-opentype'),
-    url('../../font/fontello.woff2?76452146') format('woff2'),
-    url('../../font/fontello.woff?76452146') format('woff'),
-    url('../../font/fontello.ttf?76452146') format('truetype'),
-    url('../../font/fontello.svg?76452146#fontello') format('svg');
-    font-weight: normal;
-    font-style: normal;
+    font-family: fontello;
+    src: url(../../font/fontello.eot?76452146);
+    src: url(../../font/fontello.eot?76452146#iefix) format('embedded-opentype'), url(../../font/fontello.woff2?76452146) format('woff2'), url(../../font/fontello.woff?76452146) format('woff'), url(../../font/fontello.ttf?76452146) format('truetype'), url(../../font/fontello.svg?76452146#fontello) format('svg');
+    font-weight: 400;
+    font-style: normal
 }
 
-[class^="icon-"]:before,
-[class*=" icon-"]:before {
-    font-family: "fontello";
+[class*=" icon-"]:before,
+[class^=icon-]:before {
+    font-family: fontello;
     font-style: normal;
-    font-weight: normal;
+    font-weight: 400;
     speak: none;
-
     display: inline-block;
     text-decoration: inherit;
     width: 1em;
     margin-right: .2em;
     text-align: center;
-    /* opacity: .8; */
-    /* For safety - reset parent styles, that can break glyph codes*/
     font-variant: normal;
     text-transform: none;
-
-    /* fix buttons height, for twitter bootstrap */
     line-height: 1em;
-
-    /* Animation center compensation - margins should be symmetric */
-    /* remove if not needed */
-    margin-left: .2em;
-
+    margin-left: .2em
 }
 
 .icon-up-big:before {
@@ -41,7 +28,7 @@
     font-size: 30px;
     margin-top: 20px;
     color: #fff;
-    transition: all 1.5s;
+    transition: all 1.5s
 }
 
 .icon-location:before {
@@ -50,36 +37,36 @@
     color: #c59d5f;
     margin-top: -10px;
     position: relative;
-    z-index: 1;
+    z-index: 1
 }
 
 .icon-clock:before {
     content: '\e802';
     font-size: 32px;
-    color: #c59d5f;
+    color: #c59d5f
 }
 
 .icon-phone:before {
     content: '\e803';
     font-size: 32px;
     color: #c59d5f;
-    padding-top: 5px;
+    padding-top: 5px
 }
 
 .icon-facebook:before {
     content: '\f09a';
     font-size: 54px;
-    color: white;
+    color: #fff;
     padding: 7px 7px;
     transition: all 1.5s;
-    text-decoration: none;
+    text-decoration: none
 }
 
 .icon-mail-alt:before {
     content: '\f0e0';
     font-size: 32px;
     color: #c59d5f;
-    padding-top: 5px;
+    padding-top: 5px
 }
 
 .icon-facebook-squared:before {
@@ -87,20 +74,20 @@
     color: #3b5998;
     font-size: 24px;
     transform: scale(1.5);
-    transition: all .5s;
+    transition: all .5s
 }
 
 .icon-facebook:hover:before {
     content: '\f09a';
     color: #3b5998;
-    background-color: white;
+    background-color: #fff;
     transform: scale(1.1);
-    border-radius: 3px;
+    border-radius: 3px
 }
 
 .icon-facebook-squared:hover:before {
     content: '\f308';
-    transform: scale(1.8);
+    transform: scale(1.8)
 }
 
 .icon-signal:before {
@@ -109,21 +96,17 @@
     color: #c59d5f
 }
 
-/* '' */
-
 .icon-credit-card:before {
     content: '\e805';
     font-size: 32px;
-    color: #c59d5f;
+    color: #c59d5f
 }
-
-/* '' */
 
 .icon-up-big:hover:before {
     content: '\e800';
     color: #c59d5f;
     cursor: pointer;
-    transform: scale(1.1);
+    transform: scale(1.1)
 }
 
 .icon-down-big:before {
@@ -134,21 +117,28 @@
     text-shadow: 0 0 20px #000;
     transition: all .2s linear;
     animation: scale-sml 1.5s ease infinite;
-    animation-delay: 4s;
+    animation-delay: 4s
 }
 
-.icon-food:before { content: '\f0f5'; color: #c59d5f;  font-size: 30px; margin:10px;animation: scale-sml 1.5s ease infinite;}
+.icon-food:before {
+    content: '\f0f5';
+    color: #c59d5f;
+    font-size: 30px;
+    margin: 10px;
+    animation: scale-sml 1.5s ease infinite
+}
 
-.icon-cancel:before { content: '\e807'; color: #c59d5f;  font-size: 40px; } 
+.icon-cancel:before {
+    content: '\e807';
+    color: #c59d5f;
+    font-size: 40px
+}
 
 @keyframes scale-sml {
     0% {
-        transform: scale(.8);
+        transform: scale(.8)
     }
     50% {
-        transform: scale(1.1);
-
-        100% {
-            transform: scale(.8);
-        }
+        transform: scale(1.1)
     }
+}
