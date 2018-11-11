@@ -49,7 +49,7 @@
                  function selectCard(){
                     $(".btn").removeClass('select');
                     $('.menu-rest-module').hide();
-                    $('.menu-rest-module[data-index=' + $index + ']').fadeIn(500);
+                    $('.menu-rest-module[data-index=' + $index + ']').fadeIn(500);                 
                  }
     };
  
@@ -105,7 +105,7 @@
     function slider(){    
        $('.slider').animate({opacity: 0}, 'slow', function() {
         $(this)
-            .css({'background-image': `url(../img/img${ind}.jpg)`})
+            .css({'background-image': `url(./img/img_${ind}.jpg)`})
             .animate({opacity: 1});
            $('.dot').removeClass('checked');
            $(`.dot[data-ind=${ind}]`).addClass('checked')
